@@ -1,0 +1,17 @@
+<Updates>
+
+    <TargetName>kdupdaterdemo</TargetName>
+    <TargetVersion>1.0.0</TargetVersion>
+
+    <PackageUpdate>
+        <Name>com.kdab.kdupdaterdemo</Name>
+        <Description>Installs the KDUpdater Demo</Description>
+        <Version>1.1</Version>
+        <ReleaseDate>2010-06-06</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">kdupdaterdemo_win.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">kdupdaterdemo_mac.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">kdupdaterdemo_unix.kvz</UpdateFile>
+    </PackageUpdate>
+
+</Updates>
+

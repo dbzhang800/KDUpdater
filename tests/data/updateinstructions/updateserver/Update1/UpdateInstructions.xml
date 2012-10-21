@@ -1,0 +1,10 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/gpl-3.0.txt</Arg>
+        <!-- One arg is missing (destination) -->
+    </UpdateOperation>
+
+</UpdateInstructions>
+

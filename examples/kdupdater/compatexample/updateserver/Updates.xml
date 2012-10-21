@@ -1,0 +1,40 @@
+<Updates>
+
+    <TargetName>CompatExample</TargetName>
+    <TargetVersion>1.x</TargetVersion>
+
+    <PackageUpdate>
+        <Name>Objects</Name>
+        <Description>Objects update - version 1.1</Description>
+        <ReleaseNotes>http://www.kdab.net/?page=products&amp;sub=kdtannouncement</ReleaseNotes>
+        <Version>1.1</Version>
+        <ReleaseDate>2009-02-01</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">Objects1.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">Objects1.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">Objects1.kvz</UpdateFile>
+    </PackageUpdate>
+
+    <PackageUpdate>
+        <Name>Objects</Name>
+        <Description>Objects update - version 2.0</Description>
+        <ReleaseNotes>http://www.kdab.net/?page=products&amp;sub=kdtannouncement</ReleaseNotes>
+        <Version>2.0</Version>
+        <RequiredCompatLevel>2</RequiredCompatLevel>
+        <ReleaseDate>2009-02-12</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">Objects2.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">Objects2.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">Objects2.kvz</UpdateFile>
+    </PackageUpdate>
+
+    <CompatUpdate>
+      <Description>Update the compat level to 2</Description>
+      <CompatLevel>2</CompatLevel>
+      <ReleaseDate>2009-02-10</ReleaseDate>
+      <ReleaseNotes>http://www.kdab.net/?page=products&amp;sub=kdtannouncement</ReleaseNotes>
+      <UpdateFile platform-regex="Windows.*">Compat2.kvz</UpdateFile>
+      <UpdateFile platform-regex="MacOSX.*">Compat2.kvz</UpdateFile>
+      <UpdateFile platform-regex="Linux.*">Compat2.kvz</UpdateFile>
+    </CompatUpdate>
+
+</Updates>
+

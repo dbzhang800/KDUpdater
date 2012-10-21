@@ -1,0 +1,15 @@
+<Packages>
+    <ApplicationName>kdupdaterdemo</ApplicationName>
+    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <Package>
+        <Name>com.kdab.kdupdaterdemo</Name>
+        <Pixmap></Pixmap>
+        <Title>KDUpdater Demo</Title>
+        <Description>Installs the KDUpdater Demo.</Description>
+        <Version>1.0.0</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2010-06-03</InstallDate>
+        <Size>0</Size>
+        <Dependencies></Dependencies>
+    </Package>
+</Packages> 

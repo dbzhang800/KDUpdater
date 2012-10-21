@@ -1,0 +1,37 @@
+<Updates>
+
+    <TargetName>Example1_ClientApp</TargetName>
+    <TargetVersion>1.x</TargetVersion>
+
+    <PackageUpdate>
+        <Name>TextFileSet</Name>
+        <Description>License Text Update - GPL Version 3</Description>
+        <Version>1.0</Version>
+        <ReleaseDate>2008-04-09</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">Update1.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">Update1.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">Update1.kvz</UpdateFile>
+    </PackageUpdate>
+
+    <PackageUpdate>
+        <Name>TextFileSet</Name>
+        <Description>License Text Update - GPL Version 1</Description>
+        <Version>1.0</Version>
+        <ReleaseDate>2008-04-09</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">Update2.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">Update2.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">Update2.kvz</UpdateFile>
+    </PackageUpdate>
+
+    <PackageUpdate>
+        <Name>TextFileSet</Name>
+        <Description>License Text Update - GPL Version 2</Description>
+        <Version>1.0</Version>
+        <ReleaseDate>2008-04-09</ReleaseDate>
+        <UpdateFile platform-regex="Windows.*">Update3.kvz</UpdateFile>
+        <UpdateFile platform-regex="MacOSX.*">Update3.kvz</UpdateFile>
+        <UpdateFile platform-regex="Linux.*">Update3.kvz</UpdateFile>
+    </PackageUpdate>
+
+</Updates>
+

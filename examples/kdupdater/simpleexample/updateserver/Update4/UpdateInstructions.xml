@@ -1,0 +1,10 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/kdtools.png</Arg>
+        <Arg>{APPDIR}/icon.png</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+

@@ -1,0 +1,10 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/gpl-1.0.txt</Arg>
+        <Arg>{APPDIR}/license.txt</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+

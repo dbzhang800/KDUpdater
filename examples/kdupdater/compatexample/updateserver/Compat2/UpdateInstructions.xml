@@ -1,0 +1,19 @@
+<UpdateInstructions>
+
+    <UpdateName>Application2</UpdateName>
+    <Version>2.0</Version>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/application.qss</Arg>
+        <Arg>{TARGETDIR}/application.qss</Arg>
+    </UpdateOperation>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/headers.js</Arg>
+        <Arg>{TARGETDIR}/headers.js</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+

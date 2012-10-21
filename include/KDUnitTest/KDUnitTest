@@ -1,0 +1,4 @@
+#include "kdunittest_static_export.h"
+#include "kdunittestglobal.h"
+#include "testregistry.h"
+#include "test.h"

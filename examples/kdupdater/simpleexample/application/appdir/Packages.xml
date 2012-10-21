@@ -1,0 +1,23 @@
+<Packages>
+
+    <TargetName>SimpleExample</TargetName>
+    <TargetVersion>1.0</TargetVersion>
+
+    <Package>
+        <Name>MainWindow</Name>
+        <Title>The main window of the application</Title>
+        <Version>0.0</Version>
+        <LastUpdateDate>2008-04-09</LastUpdateDate>
+        <InstallDate>2008-04-09</InstallDate>
+    </Package>
+
+    <Package>
+        <Name>LicenseText</Name>
+        <Title>Set of related text files</Title>
+        <Version>0.0</Version>
+        <Description>This package contains license text for the application.</Description>
+        <LastUpdateDate>2008-04-09</LastUpdateDate>
+        <InstallDate>2008-04-09</InstallDate>
+    </Package>
+
+</Packages>

@@ -1,0 +1,11 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <!-- This file is not in the update -->
+        <Arg>{CURPATH}/gpl-2.0.txt</Arg>
+        <Arg>{APPDIR}/gpl-2.0.txt</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+

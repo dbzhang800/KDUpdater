@@ -1,0 +1,16 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/psmfirmware.txt</Arg>
+        <Arg>{APPDIR}/psmfirmware.txt</Arg>
+    </UpdateOperation>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/l4rfirmware.txt</Arg>
+        <Arg>{APPDIR}/l4rfirmware.txt</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+

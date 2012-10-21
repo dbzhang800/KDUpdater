@@ -1,0 +1,14 @@
+<Packages>
+    <TargetName>FirmwareDemo</TargetName>
+    <TargetVersion>1.0</TargetVersion>
+    <CompatLevel>1</CompatLevel>
+
+    <Package>
+        <Name>Firmware</Name>
+        <Title>Firmwares used in the application (micro and mixer)</Title>
+        <Version>1.0</Version>
+        <LastUpdateDate>2008-04-09</LastUpdateDate>
+        <InstallDate>2008-04-09</InstallDate>
+    </Package>
+
+</Packages>

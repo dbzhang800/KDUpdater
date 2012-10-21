@@ -1,0 +1,16 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/object1.txt</Arg>
+        <Arg>{APPDIR}/object1.txt</Arg>
+    </UpdateOperation>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>{CURPATH}/object2.txt</Arg>
+        <Arg>{APPDIR}/object2.txt</Arg>
+    </UpdateOperation>
+
+</UpdateInstructions>
+
