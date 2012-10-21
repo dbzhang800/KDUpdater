@@ -30,7 +30,7 @@
 #include <QFSFileEngine>
 #include <QDebug>
 
-#include <KDToolsCore/KDSaveFile>
+#include <KDToolsCore/kdsavefile.h>
 
 using namespace KDUpdater;
 

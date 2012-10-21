@@ -28,7 +28,7 @@
 #include <QDomElement>
 #include <QVector>
 
-#include <KDToolsCore/KDSaveFile>
+#include <KDToolsCore/kdsavefile.h>
 
 /*!
    \ingroup kdupdater

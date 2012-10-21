@@ -1,5 +1,4 @@
 TEMPLATE = app
-
-include( ../stage.pri )
+include (../../kdtools.pri)
 
 SOURCES += kdthreadrunner_test.cpp

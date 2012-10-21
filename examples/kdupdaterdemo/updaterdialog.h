@@ -25,7 +25,7 @@
 
 #include <QDialog>
 
-#include <KDToolsCore/pimpl_ptr>
+#include <KDToolsCore/pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
 class UpdaterDialog : public QDialog

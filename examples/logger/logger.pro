@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-include( ../stage.pri )
+include( ../../kdtools.pri)
 
 CONFIG += console
 SOURCES=logger.cpp

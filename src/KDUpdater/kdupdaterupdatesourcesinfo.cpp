@@ -34,7 +34,7 @@
 
 #include <algorithm>
 
-#include <KDToolsCore/KDSaveFile>
+#include <KDToolsCore/kdsavefile.h>
 
 /*!
    \ingroup kdupdater

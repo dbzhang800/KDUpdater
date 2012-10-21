@@ -21,7 +21,7 @@
 **********************************************************************/
 
 #include <kdlog.h>
-#include <kdlogtextwidget.h>
+//#include <kdlogtextwidget.h>
 
 #include <QtGui>
 
@@ -35,22 +35,22 @@ int main( int argc, char * argv[] ) {
     cdev->addLogDevice( new KDSystemLogDevice( KDSystemLogDevice::User ) );
 
     QWidget top;
-    QVBoxLayout vlay( &top );
-    KDLogTextWidget widget( &top );
-    vlay.addWidget( &widget );
+//    QVBoxLayout vlay( &top );
+//    KDLogTextWidget widget( &top );
+//    vlay.addWidget( &widget );
 
-    widget.setMinimumVisibleLines( 2 );
+//    widget.setMinimumVisibleLines( 2 );
 
     KDSignalLogDevice* logObj = new KDSignalLogDevice();
     cdev->addLogDevice( logObj );
-    QObject::connect( logObj, SIGNAL(info(QString)),
-                      &widget, SLOT(message(QString)) );
-    QObject::connect( logObj, SIGNAL(debug(QString)),
-                      &widget, SLOT(message(QString))  );
-    QObject::connect( logObj, SIGNAL(warning(QString)),
-                      &widget, SLOT(message(QString)) );
-    QObject::connect( logObj, SIGNAL(error(QString)),
-                      &widget, SLOT(message(QString)) );
+//    QObject::connect( logObj, SIGNAL(info(QString)),
+//                      &widget, SLOT(message(QString)) );
+//    QObject::connect( logObj, SIGNAL(debug(QString)),
+//                      &widget, SLOT(message(QString))  );
+//    QObject::connect( logObj, SIGNAL(warning(QString)),
+//                      &widget, SLOT(message(QString)) );
+//    QObject::connect( logObj, SIGNAL(error(QString)),
+//                      &widget, SLOT(message(QString)) );
 
     top.show();
 
@@ -68,9 +68,9 @@ int main( int argc, char * argv[] ) {
     log.logWarning( "Warning %d to KDLog", 5);
     log.logError( "Error %d to KDLog", 6);
     log.logInfo("Info %d to KDLog", 7 );
-    widget.message( QObject::tr( "Red message" ), Qt::red );
-    widget.message( QObject::tr( "Green message" ), Qt::green );
-    widget.message( QObject::tr( "Blue message" ), Qt::blue );
+//    widget.message( QObject::tr( "Red message" ), Qt::red );
+//    widget.message( QObject::tr( "Green message" ), Qt::green );
+//    widget.message( QObject::tr( "Blue message" ), Qt::blue );
 
     return app.exec();
 }

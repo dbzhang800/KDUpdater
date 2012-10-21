@@ -1,9 +1,10 @@
+include (../../../../kdtools.pri)
+include (../../kdupdater.pri)
+
 TEMPLATE    = app
 DEFINES -= QT_NO_KEYWORDS QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII
 
 TARGET      = SimpleExample
-
-include( ../stage.pri )
 
 EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 

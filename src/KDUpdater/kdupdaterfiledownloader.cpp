@@ -23,7 +23,7 @@
 #include "kdupdaterfiledownloader_p.h"
 #include "kdupdaterfiledownloaderfactory.h"
 
-#include <KDToolsCore/KDAutoPointer>
+#include <KDToolsCore/kdautopointer.h>
 
 #include <QFile>
 #include <QFtp>

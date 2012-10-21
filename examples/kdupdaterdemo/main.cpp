@@ -31,7 +31,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QTimer>
 
-#include <KDUpdater/Application>
+#include <KDUpdater/kdupdaterapplication.h>
 
 #include <algorithm>
 #include <functional>

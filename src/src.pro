@@ -1,9 +1,18 @@
-TEMPLATE = subdirs
+TEMPLATE    = lib
+TARGET = $$qtLibraryTarget(hkdupdater)
+VERSION = 2.3.0
+DESTDIR = ../lib
+INCLUDEPATH += .
 
-CONFIG += ordered
+QT          += xml network
+CONFIG += create_prl
+DEFINES += emit=""
+DEFINES += QT_NO_KEYWORDS QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII QT_NO_CAST_FROM_BYTEARRAY
 
-SUBDIRS += KDUnitTest
-SUBDIRS += KDToolsCore
-SUBDIRS += KDToolsGui
-# KDUpdater needs Qt >= 4.4
-contains($$list($$[QT_VERSION]), 4.[4-9].*):SUBDIRS += KDUpdater
+DEFINES += KDTOOLS_SHARED BUILD_SHARED_KDTOOLSCORE BUILD_SHARED_KDUPDATERs
+
+
+CONFIG += kdupdatergui kdupdaterguitextbrowser
+
+include (KDToolsCore/KDToolsCore.pri)
+include (KDUpdater/KDUpdater.pri)

@@ -24,7 +24,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <KDToolsCore/pimpl_ptr>
+#include <KDToolsCore/pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
 class MainWindow : public QMainWindow    

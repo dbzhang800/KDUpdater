@@ -25,7 +25,7 @@
 #include "kdupdaterupdatesourcesmodel.h"
 #include "ui_addupdatesourcedialog.h"
 
-#include <KDToolsCore/KDAutoPointer>
+#include <KDToolsCore/kdautopointer.h>
 
 #include <QMessageBox>
 #include <QContextMenuEvent>

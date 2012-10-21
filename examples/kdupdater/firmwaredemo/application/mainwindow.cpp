@@ -23,15 +23,15 @@
 #include "mainwindow.h"
 #include "helpdialog.h"
 
-#include <KDUpdater/KDUpdater>
-#include <KDUpdater/Update>
-#include <KDUpdater/PackagesInfo>
-#include <KDUpdater/PackagesView>
-#include <KDUpdater/UpdatesDialog>
-#include <KDUpdater/UpdateFinder>
-#include <KDUpdater/UpdateInstaller>
-#include <KDUpdater/UpdateSourcesView>
-#include <KDUpdater/Target>
+#include <KDUpdater/kdupdater.h>
+#include <KDUpdater/kdupdaterupdate.h>
+#include <KDUpdater/kdupdaterpackagesinfo.h>
+#include <KDUpdater/kdupdaterpackagesview.h>
+#include <KDUpdater/kdupdaterupdatesdialog.h>
+#include <KDUpdater/kdupdaterupdatefinder.h>
+#include <KDUpdater/kdupdaterupdateinstaller.h>
+#include <KDUpdater/kdupdaterupdatesourcesview.h>
+#include <KDUpdater/kdupdatertarget.h>
 
 #include <QDir>
 #include <QFile>

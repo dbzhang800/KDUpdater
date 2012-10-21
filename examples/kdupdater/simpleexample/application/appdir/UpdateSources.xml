@@ -3,6 +3,6 @@
  <Name>LocalSource</Name>
  <Title>Local Update Source</Title>
  <Description>Update source from the local file system</Description>
- <Url>file:////home/build/Buildbot/kdtools-qt4.8-linux64/build/kdtools/examples/kdupdater/simpleexample/updateserver</Url>
+ <Url>file:////home/debao/qt-labs/kdtools-2.3.0/examples/kdupdater/simpleexample/updateserver</Url>
  </UpdateSource>
 </UpdateSources>

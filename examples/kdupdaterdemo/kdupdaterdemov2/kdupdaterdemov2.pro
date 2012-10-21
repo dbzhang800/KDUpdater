@@ -1,8 +1,5 @@
 TEMPLATE = app
-LIBS += $$KD_UPDATER_LIBS
-KDTOOLS += core \
-    updater
-include( ../stage.pri )
+include (../../../kdtools.pri)
 SOURCES += ../main.cpp \
     ../mainwindow.cpp \
     ../updaterdialog.cpp \

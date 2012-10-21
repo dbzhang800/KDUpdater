@@ -1,14 +1,12 @@
-include( ../stage.pri )
-
 TEMPLATE = app
 TARGET = ufcreator
 DEPENDPATH += . ../../src/KDUpdater  ../../src
-INCLUDEPATH += . ../../include ../../src/KDUpdater ../../src
-QT -= gui webkit xml network
+INCLUDEPATH +=. ../../src/KDUpdater  ../../src
+QT -= gui
 CONFIG += console
 macx: CONFIG -= app_bundle
 
-DESTDIR = $$KDTOOLS_BASE/bin
+DESTDIR = ../../bin
 
 SOURCES     += main.cpp \
            ../../src/KDUpdater/kdupdaterufcompresscommon.cpp

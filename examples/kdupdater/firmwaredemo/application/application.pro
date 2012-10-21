@@ -1,7 +1,13 @@
+include (../../../../kdtools.pri)
+include (../../kdupdater.pri)
+
 TEMPLATE    = app
 
 QT          += script webkit
 TARGET      = FirmwareDemo
+
+CONFIG += kdupdaterguitextbrowser
+
 kdupdaterguitextbrowser {
     DEFINES += KDUPDATERGUITEXTBROWSER KDUPDATERVIEW=QTextBrowser
     QT += gui
@@ -10,8 +16,6 @@ kdupdaterguiwebview {
     DEFINES += KDUPDATERGUIWEBVIEW KDUPDATERVIEW=QWebView
     QT += gui webkit
 }
-
-include( ../stage.pri )
 
 EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 

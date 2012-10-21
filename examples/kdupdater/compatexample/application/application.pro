@@ -1,9 +1,9 @@
+include (../../../../kdtools.pri)
+include (../../kdupdater.pri)
 TEMPLATE    = app
 
 QT          += script
 TARGET      = CompatExample
-
-include( ../stage.pri )
 
 EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 
