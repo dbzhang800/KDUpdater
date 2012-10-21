@@ -32,6 +32,7 @@ SOURCES += $$PWD/kdupdaterpackagesinfo.cpp \
            $$PWD/kdupdaterupdatesourcesinfo.cpp \
            $$PWD/kdupdaterupdate.cpp \
            $$PWD/kdupdaterfiledownloader.cpp \
+           $$PWD/kdupdaterfiledownloader_mac.cpp \
            $$PWD/kdupdaterfiledownloaderfactory.cpp \
            $$PWD/kdupdaterupdateoperation.cpp \
            $$PWD/kdupdaterupdateoperations.cpp \

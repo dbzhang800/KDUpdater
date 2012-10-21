@@ -99,10 +99,10 @@ void MainWindow::Private::closeAndRestart()
     const QString appName( qApp->applicationFilePath().mid( 0, extIndex ) );
     const QString updatedAppFileName( appName + QString::fromLatin1( "tmp" ) + appFileExtension );
     const QString startAppName( QFileInfo( updatedAppFileName ).absoluteFilePath() );
-    std::cout << appFileExtension.toStdString() << std::endl;
-    std::cout << appName.toStdString() << std::endl;
-    std::cout << updatedAppFileName.toStdString() << std::endl;
-    std::cout << startAppName.toStdString() << std::endl;
+    std::cout << appFileExtension.toStdString().c_str() << std::endl;
+    std::cout << appName.toStdString().c_str()<< std::endl;
+    std::cout << updatedAppFileName.toStdString().c_str() << std::endl;
+    std::cout << startAppName.toStdString().c_str() << std::endl;
     QProcess::startDetached( startAppName, arguments, QDir::currentPath( ) );
     m_parent->close();
 }
