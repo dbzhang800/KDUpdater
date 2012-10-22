@@ -26,7 +26,7 @@
 #include <KDToolsCore/kdautopointer.h>
 
 #include <QFile>
-#include <QFtp>
+//#include <QFtp>
 #include <QNetworkAccessManager>
 #if QT_VERSION >= 0x040600
 #include <QNetworkProxyFactory>
@@ -576,7 +576,8 @@ void KDUpdater::ResourceFileDownloader::onError()
     d->downloaded = false;
 }
 
-#ifndef QT_NO_FTP
+#if 0
+//QT_NO_FTP
 
 ////////////////////////////////////////////////////////////////////////////
 // KDUpdater::FtpDownloader

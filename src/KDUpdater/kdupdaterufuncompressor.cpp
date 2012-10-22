@@ -27,7 +27,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QFSFileEngine>
+//#include <QFSFileEngine>
 #include <QDebug>
 
 #include <KDToolsCore/kdsavefile.h>
@@ -115,7 +115,7 @@ bool UFUncompressor::uncompress()
 
     // Lets get to the destination directory
     const QDir dir(d->destination);
-    QFSFileEngine fileEngine;
+//    QFSFileEngine fileEngine;
 
     // Lets create the required directory structure
     int numExpectedFiles = 0;
@@ -130,8 +130,8 @@ bool UFUncompressor::uncompress()
                 d->setError(tr("Could not create folder: %1/%2").arg( d->destination, fileName ));
                 return false;
             }
-            fileEngine.setFileName( QString(QLatin1String( "%1/%2" )).arg(d->destination, fileName) );
-            fileEngine.setPermissions( header.permList[i] | QAbstractFileEngine::ExeOwnerPerm );
+//            fileEngine.setFileName( QString(QLatin1String( "%1/%2" )).arg(d->destination, fileName) );
+//            fileEngine.setPermissions( header.permList[i] | QAbstractFileEngine::ExeOwnerPerm );
         } else {
            ++numExpectedFiles;
         }

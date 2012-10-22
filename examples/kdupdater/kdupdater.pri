@@ -1,7 +1,5 @@
-INCLUDEPATH 	+= $$KDTOOLS_BASE/include
 QT		+= xml network
 CONFIG += kdtools
-KDTOOLS += updater
 
 win32 {
  DEFINES	+= _CRT_SECURE_NO_DEPRECATE

@@ -39,7 +39,7 @@
 #include <QtCore/QUrl>
 #include <QtCore/QVariant>
 
-#include <QtGui/QApplication>
+#include <QApplication>
 
 /*!
    \class Updater updater.h
@@ -156,7 +156,7 @@ void Updater::Private::init()
     m_repository = repodir.absolutePath();
     const QString appDirPath = QApplication::applicationDirPath();
     const QDir appDir( appDirPath );
-#ifdef Q_WS_MACX
+#ifdef Q_OS_MAC
     const QFileInfo file ( appDir.absoluteFilePath( QLatin1String( "../../../packages.xml" ) ) );
 #else
     const QFileInfo file ( appDir.absoluteFilePath( QLatin1String( "packages.xml" ) ) );

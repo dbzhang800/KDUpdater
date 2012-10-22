@@ -2,7 +2,7 @@ include (../../../../kdtools.pri)
 include (../../kdupdater.pri)
 TEMPLATE    = app
 
-QT          += script
+QT          += widgets script
 TARGET      = CompatExample
 
 EXAMPLE_APP_DIR="$$OUT_PWD/appdir"

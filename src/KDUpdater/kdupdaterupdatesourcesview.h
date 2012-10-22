@@ -26,8 +26,8 @@
 #include "kdupdater.h"
 #include <KDToolsCore/pimpl_ptr.h>
 
-#include <QtGui/QDialog>
-#include <QtGui/QTreeView>
+#include <QDialog>
+#include <QTreeView>
 
 namespace KDUpdater
 {

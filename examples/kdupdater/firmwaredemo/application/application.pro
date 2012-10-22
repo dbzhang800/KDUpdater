@@ -3,7 +3,7 @@ include (../../kdupdater.pri)
 
 TEMPLATE    = app
 
-QT          += script webkit
+QT          += widgets script webkit
 TARGET      = FirmwareDemo
 
 CONFIG += kdupdaterguitextbrowser

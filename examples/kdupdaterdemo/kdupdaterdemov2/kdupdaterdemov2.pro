@@ -1,5 +1,6 @@
 TEMPLATE = app
 include (../../../kdtools.pri)
+QT += widgets
 SOURCES += ../main.cpp \
     ../mainwindow.cpp \
     ../updaterdialog.cpp \

@@ -226,7 +226,7 @@ bool KDSignalSpy::addObject( QObject * o, int level ) {
 		++d->numSlots;
 	    } else {
 		qWarning("KDSignalSpy: QMetaObject::connect returned false. Unable to connect to signal '%s' on object '%s'.",
-			 m.signature(), qPrintable( o->objectName() ) );
+                 m.methodSignature().data(), qPrintable( o->objectName() ) );
                 success = false;
 	    }
 
@@ -254,7 +254,7 @@ int KDSignalSpy::qt_metacall( QMetaObject::Call call, int id, void * args[] ) {
 
 void KDSignalSpy::Private::addSignal( const QObject * o, const QMetaMethod & m, const char * className ) {
 
-    const QByteArray signature = QByteArray( className ) + "::" + m.signature();
+    const QByteArray signature = QByteArray( className ) + "::" + m.methodSignature();
 
     signals[o].push_back( signature );
     indexMap.push_back( qMakePair( o, signature ) );

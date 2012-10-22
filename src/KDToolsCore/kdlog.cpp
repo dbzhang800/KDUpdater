@@ -29,7 +29,7 @@
 #include <QByteArray>
 #include <QString>
 #include <QVector>
-
+#include <QDebug>
 #include <cassert>
 
 /*!

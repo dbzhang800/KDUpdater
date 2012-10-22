@@ -62,7 +62,7 @@ public:
     }
 };
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 void makeFileHidden( const QString& path, bool hidden )
 {
     const QString absolute = QDir::toNativeSeparators( QFileInfo( path ).absoluteFilePath() );
@@ -114,7 +114,7 @@ static QString generateTempFileName( const QString& path, bool tmpPath )
     const QString dir = tmpPath ? QDir::tempPath() : fi.absolutePath();
     const QString file = fi.fileName();
 
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     const QString tmp = QLatin1String( "%1/.%2.tmp.XXXXXX" );
 #else
     const QString tmp = QLatin1String( "%1/%2.tmp.XXXXXX" );
@@ -251,7 +251,7 @@ public:
                 it.next();
                 connect( tmpFile, it.connectableSignature(), q, it.connectableSignature() );
             }
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
             makeFileHidden( tmpFile->fileName(), true );
 #endif
         }
@@ -506,7 +506,7 @@ bool KDSaveFile::commit( KDSaveFile::CommitMode mode )
         return false;
     }
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     makeFileHidden( d->filename, false );
 #endif
  

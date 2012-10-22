@@ -24,13 +24,13 @@
 #define __KDTOOLS_KDUPDATERUPDATESMODEL_H__
 
 #include "kdupdater.h"
+#include "kdupdaterupdate.h"
 #include <KDToolsCore/pimpl_ptr.h>
 
 #include <QtCore/QAbstractTableModel>
 
 namespace KDUpdater
 {
-    class Update;
 
     class KDTOOLS_UPDATER_EXPORT UpdatesModel : public QAbstractTableModel
     {

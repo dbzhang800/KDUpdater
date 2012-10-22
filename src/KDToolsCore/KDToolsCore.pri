@@ -12,7 +12,7 @@ HEADERS += $$PWD/kdtoolsglobal.h \
     $$PWD/kdlockedsharedmemorypointer.h \
     $$PWD/kdthreadrunner.h \
     $$PWD/kdgenericfactory.h \
-    $$PWD/kdvariantconverter.h \
+#    $$PWD/kdvariantconverter.h \
     $$PWD/kdmetamethoditerator.h \
     $$PWD/kdlog_p.h
 SOURCES += $$PWD/kdtoolsglobal.cpp \
@@ -28,7 +28,7 @@ SOURCES += $$PWD/kdtoolsglobal.cpp \
     $$PWD/kdlockedsharedmemorypointer.cpp \
     $$PWD/kdthreadrunner.cpp \
     $$PWD/kdgenericfactory.cpp \
-    $$PWD/kdvariantconverter.cpp \
+#    $$PWD/kdvariantconverter.cpp \
     $$PWD/kdmetamethoditerator.cpp
 
 win32: SOURCES += $$PWD/kdlog_win.cpp

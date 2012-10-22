@@ -245,7 +245,7 @@ KDAB_UNITTEST_SIMPLE( KDThreadRunner, "kdtools/core" ) {
         slotCalledSemaphore.acquire();
         assertTrue( threadRunner.wait( JOIN_TIMEOUT ) );
         QCoreApplication::processEvents();
-#ifndef Q_WS_MAC // KDTO-187
+#ifndef Q_OS_MAC // KDTO-187
         assertEqual( receiver.slotCalledCount(), 1 );
 #endif
         assertFalse( threadRunner.isRunning() );
@@ -279,7 +279,7 @@ KDAB_UNITTEST_SIMPLE( KDThreadRunner, "kdtools/core" ) {
         slotCalledSemaphore.acquire();
         assertTrue( threadRunner.wait( JOIN_TIMEOUT ) );
         QCoreApplication::processEvents();
-#ifndef Q_WS_MAC // KDTO-187
+#ifndef Q_OS_MAC // KDTO-187
         assertEqual( receiver.slotCalledCount(), 2 );
 #endif
         assertFalse( threadRunner.isRunning() );

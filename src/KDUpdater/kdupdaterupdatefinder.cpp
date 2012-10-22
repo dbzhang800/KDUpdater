@@ -83,7 +83,7 @@ static QString suggest_platform_identifier() {
     return QLatin1String("Windows");
 #elif defined(Q_OS_LINUX)
     return QLatin1String("Linux");
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
     return QLatin1String("MacOSX");
 #else
     return QString();

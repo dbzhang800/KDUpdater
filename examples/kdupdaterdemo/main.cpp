@@ -20,8 +20,8 @@
 **
 **********************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
+#include <QApplication>
+#include <QMessageBox>
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
@@ -47,7 +47,7 @@ int main( int argc, char** argv )
     QApplication app( argc, argv );
     Q_INIT_RESOURCE( kdupdaterdemo );
     const QDir appDir( QApplication::applicationDirPath() );
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
     const QDir backupDir( appDir.absoluteFilePath( QLatin1String( "../../../kdupdaterdemobackup" ) ) );
 #else
     const QDir backupDir( appDir.absoluteFilePath( QLatin1String( "kdupdaterdemobackup" ) ) );

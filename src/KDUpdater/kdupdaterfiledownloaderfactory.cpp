@@ -59,7 +59,7 @@ FileDownloaderFactory::FileDownloaderFactory()
 {
     // Register the default file downloader set
     registerFileDownloader< LocalFileDownloader >( QLatin1String( "file" ) );
-#ifndef QT_NO_FTP
+#if 0
     registerFileDownloader< FtpDownloader >( QLatin1String( "ftp" ) );
 #endif
     registerFileDownloader< HttpDownloader >( QLatin1String( "http" ) );

@@ -1,9 +1,7 @@
 include (../../../kdtools.pri)
 
 TEMPLATE = app
-LIBS += $$KD_UPDATER_LIBS
-KDTOOLS += core \
-    updater
+QT += widgets
 SOURCES += ../main.cpp \
     ../mainwindow.cpp \
     ../updaterdialog.cpp \

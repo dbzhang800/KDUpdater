@@ -37,7 +37,7 @@
 #include <cerrno>
 
 #ifdef SUPPORT_DETACHED_PROCESS_EXECUTION
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #include <windows.h>
 #endif
 #endif
@@ -873,7 +873,7 @@ void ExecuteOperation::backup()
     // this is not possible, since the process can do whatever...
 }
 
-#if defined( SUPPORT_DETACHED_PROCESS_EXECUTION ) && defined( Q_WS_WIN )
+#if defined( SUPPORT_DETACHED_PROCESS_EXECUTION ) && defined( Q_OS_WIN )
 // stolen from qprocess_win.cpp
 static QString qt_create_commandline(const QString &program, const QStringList &arguments)
 {
@@ -930,7 +930,7 @@ bool ExecuteOperation::performOperation()
     if( args.count() >= 2 && args.last() == QLatin1String( "&" ) )
     {
         args.pop_back();
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
         QString arguments = qt_create_commandline( args.front(), args.mid( 1 ) );
         
         PROCESS_INFORMATION pinfo;

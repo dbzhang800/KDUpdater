@@ -3,6 +3,8 @@ TEMPLATE = fake_lib
 LIBNAME = $$qtLibraryTarget(hkdupdater)
 TEMPLATE = $$SAVED_TEMPLAET
 
+KDTOOLS_BASE = $$PWD
+
 LIB_PATH = $$PWD/lib
 BIN_sPATH = $$PWD/bin
 

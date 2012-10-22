@@ -23,11 +23,11 @@
 #include "updaterdialog.h"
 #include "updater.h"
 
-#include <QtGui/QDialogButtonBox>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QProgressDialog>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QProgressDialog>
 
 #include <QtCore/QEventLoop>
 

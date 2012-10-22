@@ -338,7 +338,7 @@ const char* KDMetaMethodIterator::connectableSignature() const
     if( d->connectableSignature.isEmpty() )
     {
         const QMetaMethod method = d->metaObject->method( d->index );
-        d->connectableSignature = method.signature();
+        d->connectableSignature = method.methodSignature();
         d->connectableSignature.push_front( QString::number( ( static_cast< int >( method.methodType() ) - 3 ) * -1 ).toLocal8Bit() );
     }
     return d->connectableSignature.constData();

@@ -26,7 +26,7 @@
 #include "kdupdater.h"
 #include <KDToolsCore/pimpl_ptr.h>
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 QT_BEGIN_NAMESPACE
 template< typename T >

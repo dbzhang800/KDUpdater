@@ -3,6 +3,10 @@ TEMPLATE    = lib
 QT          += xml network
 QT -= gui
 
+win32 {
+    DEFINES	+= _CRT_SECURE_NO_DEPRECATE
+}
+
 # Input
 INSTALLHEADERS = \
            $$PWD/kdupdater.h \
@@ -70,7 +74,7 @@ kdupdatergui {
     FORMS   +=        $$PWD/addupdatesourcedialog.ui \
                       $$PWD/updatesdialog.ui
 
-    QT += gui
+    QT += gui widgets
 }
 
 HEADERS += $$INSTALLHEADERS $$PRIVATEHEADERS

@@ -23,10 +23,10 @@
 #include "mainwindow.h"
 #include "updaterdialog.h"
 
-#include <QtGui/QTextBrowser>
-#include <QtGui/QMenuBar>
-#include <QtGui/QMenu>
-#include <QtGui/QApplication>
+#include <QTextBrowser>
+#include <QMenuBar>
+#include <QMenu>
+#include <QApplication>
 
 #include <QtCore/QProcess>
 #include <QtCore/QDir>

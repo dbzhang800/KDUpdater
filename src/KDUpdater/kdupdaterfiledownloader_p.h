@@ -123,7 +123,7 @@ namespace KDUpdater
         kdtools::pimpl_ptr<Private> d;
     };
 
-#ifndef QT_NO_FTP
+#if 0
     class FtpDownloader : public FileDownloader
     {
         Q_OBJECT
