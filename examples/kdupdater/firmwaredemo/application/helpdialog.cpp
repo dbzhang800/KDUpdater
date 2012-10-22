@@ -26,7 +26,7 @@
 #if defined( KDUPDATERGUIWEBVIEW )
 #include <QtWebKit/QWebView>
 #elif defined( KDUPDATERGUITEXTBROWSER )
-#include <QtGui/QTextBrowser>
+#include <QTextBrowser>
 #endif
 #include <QDebug>
 

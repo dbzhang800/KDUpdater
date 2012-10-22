@@ -3,7 +3,7 @@ include (../../kdupdater.pri)
 
 TEMPLATE    = app
 
-QT          += widgets script webkit
+QT          += widgets script
 TARGET      = FirmwareDemo
 
 CONFIG += kdupdaterguitextbrowser
@@ -28,7 +28,7 @@ qmakeEcho("  <UpdateSource>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Name>KDABSource</Name>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Title>KDAB Update Source</Title>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Description>Update source from KDAB</Description>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
-qmakeEcho("    <Url>http://www.kdab.net/~nicolas/updateserver</Url>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
+qmakeEcho("    <Url>file:///$${KDTOOLS_BASE}/examples/kdupdater/firmwaredemo/updateserver</Url>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("  </UpdateSource>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("</UpdateSources>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 
