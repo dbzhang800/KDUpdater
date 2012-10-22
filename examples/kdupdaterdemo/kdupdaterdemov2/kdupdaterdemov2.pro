@@ -15,16 +15,16 @@ RESOURCES += ../kdupdaterdemo.qrc
 
 win32{
     WINDESTDIR = $$DESTDIR
-    WINDESTDIR = $$replace( WINDESTDIR, /, \ )
+    WINDESTDIR = $$replace( WINDESTDIR, /, \\ )
     message ( $$WINDESTDIR )
-    SRCDIR = $$replace( KDTOOLS_BASE, /, \ )
+    SRCDIR = $$replace( KDTOOLS_BASE, /, \\ )
     message ( $$SRCDIR )
-    SRCREPODIR = $$SRCDIR\examples\data\kdupdaterdemo\repository
+    SRCREPODIR = $$SRCDIR\\examples\\data\\kdupdaterdemo\\repository
     message ($$SRCREPODIR)
     contains( OUTOFSOURCEBUILD, true ){ 
 		message( "outofsourcebuild")
-        DESTREPODIR = $$WINDESTDIR\data\kdupdaterdemo\repository        
-        COPYSCRIPT = copy $$SRCDIR\examples\kdupdaterdemo\kdupdaterdemov2\postbuild.bat $$WINDESTDIR\..\examples\kdupdaterdemo\kdupdaterdemov2\postbuild.bat
+        DESTREPODIR = $$WINDESTDIR\\data\\kdupdaterdemo\\repository
+        COPYSCRIPT = copy $$SRCDIR\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat $$WINDESTDIR\\..\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
 		QMAKE_PRE_LINK += $$COPYSCRIPT
 		OUTOFSOURCE = true
     }else{
@@ -32,7 +32,7 @@ win32{
 		OUTOFSOURCE = false
     }    
     CREATEREPOTARGETPRE1.commands = postbuild.bat $$OUTOFSOURCE $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
-    DESTREPODIRT = $$replace( DESTREPODIR, \\\, / )
+    DESTREPODIRT = $$replace( DESTREPODIR, \\, / )
     DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 }else{
     SRCDIR = $$KDTOOLS_BASE

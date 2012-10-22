@@ -1,8 +1,0 @@
-<UpdateSources>
- <UpdateSource>
- <Name>KDABSource</Name>
- <Title>KDAB Update Source</Title>
- <Description>Update source from KDAB</Description>
- <Url>http://www.kdab.net/~nicolas/updateserver</Url>
- </UpdateSource>
-</UpdateSources>

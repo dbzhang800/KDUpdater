@@ -8,3 +8,5 @@ BIN_sPATH = $$PWD/bin
 
 INCLUDEPATH += $$PWD/src $$PWD/src/KDToolsCore $$PWD/src/KDUpdater
 LIBS += -L$$LIB_PATH -l$$LIBNAME
+
+DEFINES += KDTOOLS_SHARED
