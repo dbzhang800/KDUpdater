@@ -9,65 +9,56 @@ HEADERS += ../mainwindow.h \
     ../updaterdialog.h \
     ../updater.h
 DEFINES += APP_VERSION="\\\"1.1\\\""
-out_of_source_build:message("OUT OF SOURCE BUILD")
 RESOURCES += ../kdupdaterdemo.qrc
 
-
+SRCREPODIR = $$KDTOOLS_SOURCE_TREE/examples/data/kdupdaterdemo/repository
+DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/appdir
+DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 
 win32{
-    WINDESTDIR = $$DESTDIR
+    DESTDIR = $$OUT_PWD
+    WINDESTDIR = $$KDTOOLS_BIN_PATH
     WINDESTDIR = $$replace( WINDESTDIR, /, \\ )
     message ( $$WINDESTDIR )
-    SRCDIR = $$replace( KDTOOLS_SOURCE_TREE, /, \\ )
-    message ( $$SRCDIR )
-    SRCREPODIR = $$SRCDIR\\examples\\data\\kdupdaterdemo\\repository
+    SRCREPODIR = $$replace( SRCREPODIR, /, \\ )
     message ($$SRCREPODIR)
-    out_of_source_build {
-        DESTREPODIR = $$WINDESTDIR\\data\\kdupdaterdemo\\repository
-        COPYSCRIPT = copy $$SRCDIR\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat $$KDTOOLS_BUILD_TREE\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
-        QMAKE_PRE_LINK += $$COPYSCRIPT
-        message($$COPYSCRIPT)
-    } else {
-        DESTREPODIR = $$SRCDIR
-    }
-    CREATEREPOTARGETPRE1.commands = postbuild.bat $$OUTOFSOURCE $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
+    DESTREPODIR = $$replace( DESTREPODIR, /, \\ )
+    message ($$DESTREPODIR)
+
+    COPYSCRIPT = copy $$PWD\\postbuild.bat $$OUT_PWD\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
+    COPYSCRIPT = $$replace (COPYSCRIPT, /, \\ )
+    QMAKE_PRE_LINK += $$COPYSCRIPT
+
+    CREATEREPOTARGETPRE1.commands = postbuild.bat $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
     DESTREPODIRT = $$replace( DESTREPODIR, \\, / )
-    DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 } else {
-    SRCDIR = $$KDTOOLS_SOURCE_TREE
-    SRCREPODIR = $$SRCDIR/examples/data/kdupdaterdemo/repository
     macx:FOLDERSUFFIX="mac"
     !macx:FOLDERSUFFIX="unix"
-    out_of_source_build {
-        DESTREPODIR = $$DESTDIR/data/kdupdaterdemo/repository
-        message ($$DESTREPODIR)
-        CREATEREPOTARGETPRE1.commands = if [ -a $$DESTDIR/data ]; then rm -rf $$DESTDIR/data &&
-        CREATEREPOTARGET.commands = mkdir -p $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX &&
-        CREATEREPOTARGET.commands += cp $$SRCREPODIR/Updates.xml $$DESTREPODIR/Updates.xml &&
-        CREATEREPOTARGET.commands += cp $$SRCREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml &&
-    } else {
-        DESTREPODIR = $$SRCDIR
-    }
+
     macx:SUFFIX=".app"
     !macx:SUFFIX=""
     ext = ".kvz"
 
-    CREATEREPOTARGET.commands += cp -R $$DESTDIR/kdupdaterdemov2$$SUFFIX $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
-    macx:CREATEREPOTARGET.commands += mv $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemov2 $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemo &&
-    CREATEREPOTARGET.commands += $$DESTDIR/ufcreator $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/ &&
-    CREATEREPOTARGET.commands += rm -rf $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
-    CREATEREPOTARGET.commands += mv $$DESTDIR/../examples/kdupdaterdemo/kdupdaterdemov2/kdupdaterdemo_$$FOLDERSUFFIX$$ext $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX$$ext &&
-    CREATEREPOTARGET.commands += rm -rf $$DESTDIR/kdupdaterdemov2$$SUFFIX
+    # copy Updates.xml and UpdateInstructions.xml to dest-dir
+    CREATEREPOTARGET.commands = mkdir -p $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX &&
+    CREATEREPOTARGET.commands += cp $$SRCREPODIR/Updates.xml $$DESTREPODIR/Updates.xml &&
+    CREATEREPOTARGET.commands += cp $$SRCREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml &&
 
-    out_of_source_build {
-        CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
-        CREATEREPOTARGETPRE1.commands += ; else
-        CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
-        CREATEREPOTARGETPRE1.commands += ; fi
-    }
-    DEFINES += REPO_DIR="\\\"$$DESTREPODIR\\\""
+    # copy generated application to dest-dir, then create the .kvz file
+    CREATEREPOTARGET.commands += cp -R $$OUT_PWD/kdupdaterdemov2$$SUFFIX $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
+    macx:CREATEREPOTARGET.commands += mv $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemov2 $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemo &&
+    CREATEREPOTARGET.commands += $$KDTOOLS_BIN_PATH/ufcreator $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/ &&
+#    CREATEREPOTARGET.commands += rm -rf $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
+    CREATEREPOTARGET.commands += mv $$OUT_PWD/kdupdaterdemo_$$FOLDERSUFFIX$$ext $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX$$ext  #&&
+#    CREATEREPOTARGET.commands += rm -rf $$OUT_PWD/kdupdaterdemov2$$SUFFIX
+
+    CREATEREPOTARGETPRE1.commands = if [ -a $$DESTREPODIR ]; then rm -rf $$DESTREPODIR &&
+    CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
+    CREATEREPOTARGETPRE1.commands += ; else
+    CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
+    CREATEREPOTARGETPRE1.commands += ; fi
 }
-message ( $$CREATEREPOTARGETPRE1.commands )
+#message ( $$CREATEREPOTARGETPRE1.commands )
 
 #QMAKE_EXTRA_TARGETS += CREATEREPOTARGET
 QMAKE_POST_LINK = $$CREATEREPOTARGETPRE1.commands
