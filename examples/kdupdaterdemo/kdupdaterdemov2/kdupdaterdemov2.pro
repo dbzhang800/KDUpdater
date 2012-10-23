@@ -33,24 +33,24 @@ win32{
     CREATEREPOTARGETPRE1.commands = postbuild.bat $$OUTOFSOURCE $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
     DESTREPODIRT = $$replace( DESTREPODIR, \\, / )
     DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
-}else{
+} else {
     SRCDIR = $$KDTOOLS_SOURCE_TREE
     SRCREPODIR = $$SRCDIR/examples/data/kdupdaterdemo/repository
     macx:FOLDERSUFFIX="mac"
     !macx:FOLDERSUFFIX="unix"
-   contains( CONFIG, out_of_source_build ){
+    out_of_source_build {
         DESTREPODIR = $$DESTDIR/data/kdupdaterdemo/repository
         message ($$DESTREPODIR)
         CREATEREPOTARGETPRE1.commands = if [ -a $$DESTDIR/data ]; then rm -rf $$DESTDIR/data &&
         CREATEREPOTARGET.commands = mkdir -p $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX &&
         CREATEREPOTARGET.commands += cp $$SRCREPODIR/Updates.xml $$DESTREPODIR/Updates.xml &&
         CREATEREPOTARGET.commands += cp $$SRCREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/UpdateInstructions.xml &&
-    }else{
+    } else {
         DESTREPODIR = $$SRCDIR
     }
     macx:SUFFIX=".app"
     !macx:SUFFIX=""
-ext = ".kvz"
+    ext = ".kvz"
 
     CREATEREPOTARGET.commands += cp -R $$DESTDIR/kdupdaterdemov2$$SUFFIX $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
     macx:CREATEREPOTARGET.commands += mv $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemov2 $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemo &&
@@ -69,5 +69,5 @@ ext = ".kvz"
 }
 message ( $$CREATEREPOTARGETPRE1.commands )
 
-//QMAKE_EXTRA_TARGETS += CREATEREPOTARGET
+#QMAKE_EXTRA_TARGETS += CREATEREPOTARGET
 QMAKE_POST_LINK = $$CREATEREPOTARGETPRE1.commands
