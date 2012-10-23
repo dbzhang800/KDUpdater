@@ -247,7 +247,7 @@ void UpdateSourcesView::editCurrentSource()
     if( !index.isValid() )    
         return;
 
-    const UpdateSourceInfo info = qVariantValue< UpdateSourceInfo >( index.data( Qt::UserRole ) );
+    const UpdateSourceInfo info = qvariant_cast< UpdateSourceInfo >( index.data( Qt::UserRole ) );
 
     KDAutoPointer< EditUpdateSourceDialog > dialog( new EditUpdateSourceDialog( this ) );
     dialog->setInfo( info );

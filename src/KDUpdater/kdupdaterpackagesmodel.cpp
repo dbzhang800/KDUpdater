@@ -197,7 +197,8 @@ QVariant PackagesModel::headerData( int section, Qt::Orientation orientation, in
 */
 void PackagesModel::Private::refresh()
 {
-    q->reset();
+    q->beginResetModel();
+    q->endResetModel();
 }
 
 #include "moc_kdupdaterpackagesmodel.cpp"

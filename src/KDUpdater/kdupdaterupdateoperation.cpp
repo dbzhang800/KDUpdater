@@ -305,7 +305,7 @@ QDomDocument KDUpdater::UpdateOperation::toXml() const
         value.setAttribute( QLatin1String( "name" ), it.key() );
         value.setAttribute( QLatin1String( "type" ), QLatin1String( QVariant::typeToName( variant.type() ) ) );
 
-        if( variant.type() != QVariant::List && variant.type() != QVariant::StringList && qVariantCanConvert< QString >( variant ) )
+        if( variant.type() != QVariant::List && variant.type() != QVariant::StringList && variant.canConvert<QString>() )
         {
             // it can convert to string? great!
             value.appendChild( doc.createTextNode( variant.toString() ) );

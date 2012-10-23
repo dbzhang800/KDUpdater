@@ -68,18 +68,18 @@
 
 static KDLog * qt_msg_logger = 0;
 
-static void kdlogger_message_handler( QtMsgType type, const char * msg ) {
+static void kdlogger_message_handler( QtMsgType type, const QMessageLogContext & /*context*/, const QString &msg ) {
     if ( !qt_msg_logger ) return;
     switch ( type ) {
     case QtDebugMsg:
-        qt_msg_logger->logDebug( "%s", msg );
+        qt_msg_logger->logDebug( "%s", msg.toLocal8Bit().data() );
         break;
     case QtWarningMsg:
-        qt_msg_logger->logWarning( "%s", msg );
+        qt_msg_logger->logWarning( "%s", msg.toLocal8Bit().data() );
         break;
     case QtCriticalMsg: // ### make a different level for this?
     case QtFatalMsg:
-        qt_msg_logger->logError( "%s", msg );
+        qt_msg_logger->logError( "%s", msg.toLocal8Bit().data() );
         break;
     }
 }
@@ -128,12 +128,12 @@ KDLog::KDLog( KDLogDevice * logDev )
 static void install_qt_msg_logger( KDLog * logger ) {
     assert( logger != 0 );
     qt_msg_logger = logger;
-    qInstallMsgHandler( kdlogger_message_handler );
+    qInstallMessageHandler( kdlogger_message_handler );
 }
 
 static void uninstall_qt_msg_logger() {
     assert( qt_msg_logger != 0 );
-    qInstallMsgHandler( 0 );
+    qInstallMessageHandler( 0 );
     qt_msg_logger = 0;
 }
 

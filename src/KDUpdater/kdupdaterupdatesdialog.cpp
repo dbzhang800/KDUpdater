@@ -201,7 +201,7 @@ void UpdatesDialog::Private::setCurrentUpdate( int index )
 
     currentUpdate = index;
 
-    const Update* const update = qVariantValue< Update* >( model.index( currentUpdate, 0 ).data( Qt::UserRole ) );
+    const Update* const update = qvariant_cast< Update* >( model.index( currentUpdate, 0 ).data( Qt::UserRole ) );
 
     QString description;
 

@@ -211,7 +211,7 @@ bool UpdatesInfo::Private::parsePackageUpdateElement(const QDomElement & updateE
             ufInfo.platformRegEx = childE.attribute(QLatin1String( "platform-regex" ), QLatin1String( ".*" ));
             ufInfo.compressedSize = childE.attribute( QLatin1String( "CompressedSize" ) ).toLongLong();
             ufInfo.uncompressedSize = childE.attribute( QLatin1String( "UncompressedSize" ) ).toLongLong();
-            ufInfo.sha1sum = QByteArray::fromHex( childE.attribute( QLatin1String( "sha1sum" ) ).toAscii() );
+            ufInfo.sha1sum = QByteArray::fromHex( childE.attribute( QLatin1String( "sha1sum" ) ).toLatin1() );
             ufInfo.fileName = childE.text();
             info.updateFiles.append(ufInfo);
         }

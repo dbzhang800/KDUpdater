@@ -138,7 +138,8 @@ UpdateSourcesInfo* UpdateSourcesModel::updateSourcesInfo() const
 */
 void UpdateSourcesModel::Private::refresh()
 {
-    q->reset();
+    q->beginResetModel();
+    q->endResetModel();
 }
 
 /*!
@@ -190,13 +191,13 @@ bool UpdateSourcesModel::setData( const QModelIndex& index, const QVariant& valu
 
     if( role == Qt::UserRole )
     {
-        const UpdateSourceInfo info = qVariantValue< UpdateSourceInfo >( value );
+        const UpdateSourceInfo info = qvariant_cast< UpdateSourceInfo >( value );
         d->updateSourcesInfo->setUpdateSourceInfoAt( index.row(), info );
         return true;
     }
     else if( role == Qt::EditRole || role == Qt::DisplayRole )
     {
-        UpdateSourceInfo info = qVariantValue< UpdateSourceInfo >( oldData );
+        UpdateSourceInfo info = qvariant_cast< UpdateSourceInfo >( oldData );
         switch( index.column() )
         {
         case Name:
