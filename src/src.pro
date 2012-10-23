@@ -1,7 +1,10 @@
+CONFIG += kdtools_library_not_used
+include (../kdtools.pri)
+
 TEMPLATE    = lib
-TARGET = $$qtLibraryTarget(hkdupdater)
+TARGET = $$LIBNAME
 VERSION = 2.3.0
-DESTDIR = ../lib
+DESTDIR = $$KDTOOLS_LIB_PATH
 INCLUDEPATH += .
 
 QT          += xml network

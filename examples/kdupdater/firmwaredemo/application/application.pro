@@ -21,14 +21,14 @@ EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 
 DEFINES += EXAMPLE_APP_DIR="\\\"$$EXAMPLE_APP_DIR\\\""
 
-out_of_source_build:qmakeCleanAndCopy("$$PWD/appdir", "$$EXAMPLE_APP_DIR")
+out_of_source_build:!build_pass:qmakeCleanAndCopy("$$PWD/appdir", "$$EXAMPLE_APP_DIR")
 
 qmakeEcho("<UpdateSources>", ">", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("  <UpdateSource>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Name>KDABSource</Name>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Title>KDAB Update Source</Title>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("    <Description>Update source from KDAB</Description>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
-qmakeEcho("    <Url>file:///$${KDTOOLS_BASE}/examples/kdupdater/firmwaredemo/updateserver</Url>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
+qmakeEcho("    <Url>file:///$${KDTOOLS_SOURCE_TREE}/examples/kdupdater/firmwaredemo/updateserver</Url>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("  </UpdateSource>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("</UpdateSources>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 

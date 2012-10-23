@@ -1,3 +1,6 @@
+CONFIG += kdtools_library_not_used
+include (../../kdtools.pri)
+
 TEMPLATE = app
 TARGET = ufcreator
 DEPENDPATH += . ../../src/KDUpdater  ../../src
@@ -6,7 +9,7 @@ QT -= gui
 CONFIG += console
 macx: CONFIG -= app_bundle
 
-DESTDIR = ../../bin
+DESTDIR = $$KDTOOLS_BIN_PATH
 
 SOURCES     += main.cpp \
            ../../src/KDUpdater/kdupdaterufcompresscommon.cpp

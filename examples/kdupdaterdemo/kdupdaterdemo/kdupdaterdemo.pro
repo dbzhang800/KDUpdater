@@ -10,11 +10,8 @@ HEADERS += ../mainwindow.h \
     ../updaterdialog.h \
     ../updater.h
 DEFINES += APP_VERSION="\\\"1.0\\\""
-    contains( CONFIG, out_of_source_build ){
-        DESTREPODIR = $$DESTDIR/data/kdupdaterdemo/repository
-    }else{
-        DESTREPODIR = $$SRCDIR
-    }
+DESTREPODIR = $$KDTOOLS_SOURCES_TREE/examples/data/kdupdaterdemo/repository
+
 DEFINES += REPO_DIR="\\\"$$DESTREPODIR\\\""
 out_of_source_build:message("OUT OF SOURCE BUILD")
 RESOURCES += ../kdupdaterdemo.qrc

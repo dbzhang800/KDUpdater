@@ -30,7 +30,9 @@ defineTest(qmakeCleanAndCopy) {
  win32 {
   dir = $$replace(dir, "/", "\\")
   dest = $$replace(dest, "/", "\\")
-  system("del /S /Q \"$$dest\"")|error("Cannot remove $$dest")
+  exists($$dest) {
+    system("del /S /Q \"$$dest\"")|error("Cannot remove $$dest")
+  }
   system("xcopy /E /I /Y \"$$dir\" \"$$dest\"")|error("Cannot copy $$dir to $$dest")
  }
  else {

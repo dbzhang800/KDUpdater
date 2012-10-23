@@ -9,7 +9,7 @@ HEADERS += ../mainwindow.h \
     ../updaterdialog.h \
     ../updater.h
 DEFINES += APP_VERSION="\\\"1.1\\\""
-OUTOFSOURCEBUILD:message("OUT OF SOURCE BUILD")
+out_of_source_build:message("OUT OF SOURCE BUILD")
 RESOURCES += ../kdupdaterdemo.qrc
 
 
@@ -18,32 +18,29 @@ win32{
     WINDESTDIR = $$DESTDIR
     WINDESTDIR = $$replace( WINDESTDIR, /, \\ )
     message ( $$WINDESTDIR )
-    SRCDIR = $$replace( KDTOOLS_BASE, /, \\ )
+    SRCDIR = $$replace( KDTOOLS_SOURCE_TREE, /, \\ )
     message ( $$SRCDIR )
     SRCREPODIR = $$SRCDIR\\examples\\data\\kdupdaterdemo\\repository
     message ($$SRCREPODIR)
-    contains( OUTOFSOURCEBUILD, true ){ 
-		message( "outofsourcebuild")
+    out_of_source_build {
         DESTREPODIR = $$WINDESTDIR\\data\\kdupdaterdemo\\repository
-        COPYSCRIPT = copy $$SRCDIR\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat $$WINDESTDIR\\..\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
-		QMAKE_PRE_LINK += $$COPYSCRIPT
-		OUTOFSOURCE = true
-    }else{
+        COPYSCRIPT = copy $$SRCDIR\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat $$KDTOOLS_BUILD_TREE\\examples\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
+        QMAKE_PRE_LINK += $$COPYSCRIPT
+        message($$COPYSCRIPT)
+    } else {
         DESTREPODIR = $$SRCDIR
-		OUTOFSOURCE = false
-    }    
+    }
     CREATEREPOTARGETPRE1.commands = postbuild.bat $$OUTOFSOURCE $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
     DESTREPODIRT = $$replace( DESTREPODIR, \\, / )
     DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 }else{
-    SRCDIR = $$KDTOOLS_BASE
+    SRCDIR = $$KDTOOLS_SOURCE_TREE
     SRCREPODIR = $$SRCDIR/examples/data/kdupdaterdemo/repository
     macx:FOLDERSUFFIX="mac"
     !macx:FOLDERSUFFIX="unix"
    contains( CONFIG, out_of_source_build ){
         DESTREPODIR = $$DESTDIR/data/kdupdaterdemo/repository
         message ($$DESTREPODIR)
-        message ( "HALLO")
         CREATEREPOTARGETPRE1.commands = if [ -a $$DESTDIR/data ]; then rm -rf $$DESTDIR/data &&
         CREATEREPOTARGET.commands = mkdir -p $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX &&
         CREATEREPOTARGET.commands += cp $$SRCREPODIR/Updates.xml $$DESTREPODIR/Updates.xml &&
@@ -62,7 +59,7 @@ ext = ".kvz"
     CREATEREPOTARGET.commands += mv $$DESTDIR/../examples/kdupdaterdemo/kdupdaterdemov2/kdupdaterdemo_$$FOLDERSUFFIX$$ext $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX$$ext &&
     CREATEREPOTARGET.commands += rm -rf $$DESTDIR/kdupdaterdemov2$$SUFFIX
 
-    contains( CONFIG, out_of_source_build ){
+    out_of_source_build {
         CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
         CREATEREPOTARGETPRE1.commands += ; else
         CREATEREPOTARGETPRE1.commands += $$CREATEREPOTARGET.commands
