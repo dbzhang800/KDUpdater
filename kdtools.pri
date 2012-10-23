@@ -22,3 +22,9 @@ KDTOOLS_BIN_PATH = $$KDTOOLS_BUILD_TREE/bin
 
     DEFINES += KDTOOLS_SHARED
 }
+
+
+lessThan(QT_MAJOR_VERSION, 5) {
+    message("Cannot build KDUpdater with Qt $${QT_VERSION}.")
+    error("Use at least Qt 5.0")
+}
