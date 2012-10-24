@@ -9,7 +9,7 @@ EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 
 DEFINES += EXAMPLE_APP_DIR="\\\"$$EXAMPLE_APP_DIR\\\""
 
-out_of_source_build:!build_pass:qmakeCleanAndCopy("$$PWD/appdir", "$$EXAMPLE_APP_DIR")
+!build_pass:qmakeCleanAndCopy("$$KDTOOLS_SOURCE_TREE/examples/data/kdupdater/compatexample/appdir", "$$EXAMPLE_APP_DIR")
 
 qmakeEcho("<UpdateSources>", ">", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
 qmakeEcho("  <UpdateSource>", ">>", "$$EXAMPLE_APP_DIR/UpdateSources.xml")
