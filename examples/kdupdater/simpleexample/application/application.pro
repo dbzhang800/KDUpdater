@@ -2,6 +2,8 @@ include (../../../../kdtools.pri)
 include (../../kdupdater.pri)
 
 TEMPLATE    = app
+DESTDIR = $$KDTOOLS_BIN_PATH
+
 DEFINES -= QT_NO_KEYWORDS QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII
 
 QT += widgets

@@ -2,6 +2,7 @@ include (../../../../kdtools.pri)
 include (../../kdupdater.pri)
 
 TEMPLATE    = app
+DESTDIR = $$KDTOOLS_BIN_PATH
 
 QT          += widgets script
 TARGET      = FirmwareDemo

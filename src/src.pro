@@ -7,6 +7,11 @@ VERSION = 2.3.0
 DESTDIR = $$KDTOOLS_LIB_PATH
 INCLUDEPATH += .
 
+win32{
+    DLLDESTDIR = $$KDTOOLS_BIN_PATH
+    QMAKE_DISTCLEAN += $$KDTOOLS_BIN_PATH/$${TARGET}.dll
+}
+
 QT          += xml network
 CONFIG += create_prl
 DEFINES += emit=""
