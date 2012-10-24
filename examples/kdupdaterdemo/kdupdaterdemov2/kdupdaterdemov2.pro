@@ -12,25 +12,22 @@ DEFINES += APP_VERSION="\\\"1.1\\\""
 RESOURCES += ../kdupdaterdemo.qrc
 
 SRCREPODIR = $$KDTOOLS_SOURCE_TREE/examples/data/kdupdaterdemo/repository
-DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/appdir
+DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/updateserver
 DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 
 win32{
     DESTDIR = $$OUT_PWD
-    WINDESTDIR = $$KDTOOLS_BIN_PATH
-    WINDESTDIR = $$replace( WINDESTDIR, /, \\ )
-    message ( $$WINDESTDIR )
-    SRCREPODIR = $$replace( SRCREPODIR, /, \\ )
-    message ($$SRCREPODIR)
-    DESTREPODIR = $$replace( DESTREPODIR, /, \\ )
-    message ($$DESTREPODIR)
 
-    COPYSCRIPT = copy $$PWD\\postbuild.bat $$OUT_PWD\\kdupdaterdemo\\kdupdaterdemov2\\postbuild.bat
-    COPYSCRIPT = $$replace (COPYSCRIPT, /, \\ )
+    SOURCE_DIR = $$replace(PWD, /, \\)
+    BUILD_DIR  = $$replace(OUT_PWD, /, \\)
+    SRCREPODIR = $$replace(SRCREPODIR, /, \\)
+    DESTREPODIR = $$replace(DESTREPODIR, /, \\)
+    WINDESTDIR = $$replace(KDTOOLS_BIN_PATH, /, \\)
+
+    COPYSCRIPT = copy $$SOURCE_DIR\\postbuild.bat $$BUILD_DIR\\postbuild.bat
     QMAKE_PRE_LINK += $$COPYSCRIPT
 
     CREATEREPOTARGETPRE1.commands = postbuild.bat $$SRCREPODIR $$DESTREPODIR $$WINDESTDIR
-    DESTREPODIRT = $$replace( DESTREPODIR, \\, / )
 } else {
     macx:FOLDERSUFFIX="mac"
     !macx:FOLDERSUFFIX="unix"

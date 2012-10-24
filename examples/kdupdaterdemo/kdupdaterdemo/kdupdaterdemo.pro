@@ -10,7 +10,7 @@ HEADERS += ../mainwindow.h \
     ../updaterdialog.h \
     ../updater.h
 DEFINES += APP_VERSION="\\\"1.0\\\""
-DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/appdir
+DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/updateserver
 
 DEFINES += REPO_DIR="\\\"$$DESTREPODIR\\\""
 RESOURCES += ../kdupdaterdemo.qrc
