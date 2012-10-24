@@ -12,6 +12,11 @@ win32{
     QMAKE_DISTCLEAN += $$KDTOOLS_BIN_PATH/$${TARGET}.dll
 }
 
+macx {
+    CONFIG += absolute_library_soname
+    QMAKE_LFLAGS_SONAME = -Wl,-install_name,$$KDTOOLS_LIB_PATH/
+}
+
 QT          += xml network
 CONFIG += create_prl
 DEFINES += emit=""

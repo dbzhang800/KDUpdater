@@ -1,0 +1,10 @@
+<UpdateInstructions>
+
+    <UpdateOperation>
+        <Name>Copy</Name>
+        <Arg>kdupdaterdemo</Arg>
+        <Arg>{APPDIR}/kdupdaterdemotmp</Arg>
+        <OnError>Abort</OnError>
+    </UpdateOperation>
+
+</UpdateInstructions>
