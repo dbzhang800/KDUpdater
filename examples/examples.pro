@@ -1,6 +1,6 @@
 TEMPLATE = subdirs
 
-SUBDIRS += logger \
+SUBDIRS += \
            kdthreadrunner
 SUBDIRS += kdupdaterdemo kdupdater
 

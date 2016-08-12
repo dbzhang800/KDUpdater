@@ -24,7 +24,6 @@ INSTALLHEADERS = \
            $$PWD/kdsignalblocker.h \
            $$PWD/kdsemaphorereleaser.h \
            $$PWD/kdrect.h \
-           $$PWD/kdlog.h \
            $$PWD/kdsignalspy.h \
            $$PWD/kdsavefile.h \
            $$PWD/kdautopointer.h \
@@ -33,8 +32,7 @@ INSTALLHEADERS = \
            $$PWD/kdthreadrunner.h \
            $$PWD/kdgenericfactory.h \
 #         $$PWD/kdvariantconverter.h \
-           $$PWD/kdmetamethoditerator.h \
-           $$PWD/kdlog_p.h
+           $$PWD/kdmetamethoditerator.h
 
 PRIVATEHEADERS = $$PWD/kdupdaterfiledownloader_p.h \
                  $$PWD/kdupdaterupdateoperations_p.h \
@@ -63,7 +61,6 @@ SOURCES += $$PWD/kdupdaterpackagesinfo.cpp \
            $$PWD/kdsignalblocker.cpp \
            $$PWD/kdsemaphorereleaser.cpp \
            $$PWD/kdrect.cpp \
-           $$PWD/kdlog.cpp \
            $$PWD/kdsignalspy.cpp \
            $$PWD/kdsavefile.cpp \
            $$PWD/kdautopointer.cpp \
@@ -79,11 +76,6 @@ PRIVATEHEADERS += $$PWD/kdupdaterufcompresscommon_p.h \
            $$PWD/kdupdaterufuncompressor_p.h
 
 SOURCES += $$PWD/kdupdaterufuncompressor.cpp
-
-win32: SOURCES += $$PWD/kdlog_win.cpp
-unix: SOURCES += $$PWD/kdlog_unix.cpp
-# Needed for kdlog_win.cpp:
-win32-msvc*:LIBS += advapi32.lib
 
 kdupdatergui {
     SOURCES +=        $$PWD/kdupdaterupdatesdialog.cpp \
