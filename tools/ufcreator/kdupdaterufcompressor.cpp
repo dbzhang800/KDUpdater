@@ -161,7 +161,7 @@ bool KDUpdater::UFCompressor::compress()
     }
     
     QDataStream ufDS( &ufFile );
-    ufDS.setVersion( QDataStream::Qt_4_2 );
+    ufDS.setVersion( QDataStream::Qt_5_0 );
     QCryptographicHash hash( QCryptographicHash::Md5 );
 
     // Insert the header into the UF file

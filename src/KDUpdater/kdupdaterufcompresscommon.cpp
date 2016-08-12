@@ -56,7 +56,7 @@ void UFEntry::addToHash(QCryptographicHash& hash) const
 {
     QByteArray data;
     QDataStream stream( &data, QIODevice::WriteOnly );
-    stream.setVersion( QDataStream::Qt_4_2 );
+    stream.setVersion( QDataStream::Qt_5_0 );
     stream << *this;
     hash.addData(data);
 }

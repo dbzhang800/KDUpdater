@@ -95,7 +95,7 @@ bool UFUncompressor::uncompress()
     }
 
     QDataStream ufDS( &ufFile );
-    ufDS.setVersion( QDataStream::Qt_4_2 );
+    ufDS.setVersion( QDataStream::Qt_5_0 );
     QCryptographicHash hash( QCryptographicHash::Md5 );
 
     // Now read the header.
@@ -156,7 +156,7 @@ bool UFUncompressor::uncompress()
         const QByteArray ba = qUncompress( ufEntry.fileData );
         // check the size
         QDataStream stream( ufEntry.fileData );
-        stream.setVersion( QDataStream::Qt_4_2 );
+        stream.setVersion( QDataStream::Qt_5_0 );
         qint32 length = 0;
         stream >> length;
         if( ba.length() != length ) // uncompress failed
