@@ -27,7 +27,7 @@
 #include <QApplication>
 #include <QFile>
 
-#include <KDUpdater/kdupdatertarget.h>
+#include <kdupdatertarget.h>
 
 #include "mainwindow.h"
 #include "../../common.h"

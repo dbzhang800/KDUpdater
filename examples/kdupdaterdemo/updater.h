@@ -23,7 +23,7 @@
 #ifndef UPDATER_H
 #define UPDATER_H
 
-#include <KDToolsCore/pimpl_ptr.h>
+#include <pimpl_ptr.h>
 #include <QObject>
 
 QT_BEGIN_NAMESPACE

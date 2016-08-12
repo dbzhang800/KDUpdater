@@ -26,5 +26,4 @@ DEFINES += KDTOOLS_SHARED BUILD_SHARED_KDTOOLSCORE BUILD_SHARED_KDUPDATER
 
 CONFIG += kdupdatergui kdupdaterguitextbrowser
 
-include (KDToolsCore/KDToolsCore.pri)
-include (KDUpdater/KDUpdater.pri)
+include (KDUpdater.pri)

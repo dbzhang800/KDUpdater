@@ -22,14 +22,14 @@
 
 #include "updater.h"
 
-#include <KDUpdater/kdupdatertarget.h>
-#include <KDUpdater/kdupdaterpackagesinfo.h>
-#include <KDUpdater/kdupdaterfiledownloaderfactory.h>
-#include <KDUpdater/kdupdaterfiledownloader.h>
-#include <KDUpdater/kdupdaterupdatefinder.h>
-#include <KDUpdater/kdupdaterupdate.h>
-#include <KDUpdater/kdupdaterupdatesourcesinfo.h>
-#include <KDUpdater/kdupdaterupdateinstaller.h>
+#include <kdupdatertarget.h>
+#include <kdupdaterpackagesinfo.h>
+#include <kdupdaterfiledownloaderfactory.h>
+#include <kdupdaterfiledownloader.h>
+#include <kdupdaterupdatefinder.h>
+#include <kdupdaterupdate.h>
+#include <kdupdaterupdatesourcesinfo.h>
+#include <kdupdaterupdateinstaller.h>
 
 #include <QtCore/QFileInfo>
 #include <QtCore/QFile>

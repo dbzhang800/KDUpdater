@@ -20,26 +20,25 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS__CORE__KDSIGNALBLOCKER_H__
+#define __KDTOOLS__CORE__KDSIGNALBLOCKER_H__
 
-#include <QDialog>
-
-#include <pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
-{
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+QT_BEGIN_NAMESPACE
+class QObject;
+QT_END_NAMESPACE
 
+class KDTOOLSCORE_EXPORT KDSignalBlocker KDAB_FINAL_CLASS {
+    Q_DISABLE_COPY( KDSignalBlocker )
+public:
+    explicit KDSignalBlocker( QObject * o );
+    explicit KDSignalBlocker( QObject & o );
+    ~KDSignalBlocker();
 private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
-
+    const bool blocked;
+    QObject * const object;
 };
 
-#endif // UPDATERDIALOG_H
+#endif /* __KDTOOLS__CORE__KDSIGNALBLOCKER_H__ */
+

@@ -20,26 +20,44 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS_KDUPDATERUPDATESDIALOG_H__
+#define __KDTOOLS_KDUPDATERUPDATESDIALOG_H__
+
+#include "kdupdater.h"
+#include <pimpl_ptr.h>
 
 #include <QDialog>
 
-#include <pimpl_ptr.h>
-#include <kdtoolsglobal.h>
+QT_BEGIN_NAMESPACE
+template< typename T >
+class QList;
+QT_END_NAMESPACE
 
-class UpdaterDialog : public QDialog
+namespace KDUpdater
 {
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+    class Update;
 
-private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
+    class KDTOOLS_UPDATER_EXPORT UpdatesDialog : public QDialog
+    {
+        Q_OBJECT
 
-};
+    public:
+        explicit UpdatesDialog(QWidget *parent = 0);
+        ~UpdatesDialog();
 
-#endif // UPDATERDIALOG_H
+        void setUpdates(const QList<Update*> &updates);
+        QList<Update*> updates() const;
+
+        bool isUpdateAllowed( const Update * update ) const;
+
+    private:
+        Q_PRIVATE_SLOT( d, void slotStateChanged() )
+        Q_PRIVATE_SLOT( d, void slotPreviousClicked() )
+        Q_PRIVATE_SLOT( d, void slotNextClicked() )
+
+        class Private;
+        kdtools::pimpl_ptr< Private > d;
+    };
+}
+
+#endif

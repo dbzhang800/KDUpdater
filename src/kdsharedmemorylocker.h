@@ -20,26 +20,39 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS__CORE__KDSHAREDMEMORYLOCKER_H
+#define __KDTOOLS__CORE__KDSHAREDMEMORYLOCKER_H
 
-#include <QDialog>
-
-#include <pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
-{
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+#if QT_VERSION >= 0x040400 || defined( DOXYGEN_RUN )
+#ifndef QT_NO_SHAREDMEMORY
+
+QT_BEGIN_NAMESPACE
+class QSharedMemory;
+QT_END_NAMESPACE
+
+#ifndef DOXYGEN_RUN
+namespace kdtools {
+#endif
+
+class KDTOOLSCORE_EXPORT KDSharedMemoryLocker KDAB_FINAL_CLASS {
+    Q_DISABLE_COPY( KDSharedMemoryLocker )
+public:
+    explicit KDSharedMemoryLocker( QSharedMemory * mem );
+    explicit KDSharedMemoryLocker( QSharedMemory & mem );
+    ~KDSharedMemoryLocker();
 
 private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
-
+    QSharedMemory * const mem;
 };
 
-#endif // UPDATERDIALOG_H
+#ifndef DOXYGEN_RUN
+}
+#endif
+
+#endif /* QT_NO_SHAREDMEMORY */
+
+#endif /* QT_VERSION >= 0x040400 || defined( DOXYGEN_RUN ) */
+
+#endif /* __KDTOOLS__CORE__KDSHAREDMEMORYLOCKER_H */

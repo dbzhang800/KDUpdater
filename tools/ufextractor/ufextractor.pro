@@ -3,8 +3,8 @@ include (../../kdtools.pri)
 
 TEMPLATE = app
 TARGET = ufextractor
-DEPENDPATH += . ../../src/KDUpdater ../../src
-INCLUDEPATH +=. ../../src/KDUpdater ../../src
+DEPENDPATH += . ../../src
+INCLUDEPATH +=. ../../src
 QT -= gui
 CONFIG += console
 macx:CONFIG -= app_bundle
@@ -12,13 +12,13 @@ macx:CONFIG -= app_bundle
 DESTDIR = $$KDTOOLS_BIN_PATH
 
 SOURCES     += main.cpp \
-           ../../src/KDUpdater/kdupdaterufcompresscommon.cpp
+           ../../src/kdupdaterufcompresscommon.cpp
 
-HEADERS += ../../src/KDUpdater/kdupdaterufcompresscommon_p.h \
-           ../../src/KDUpdater/kdupdaterufuncompressor_p.h \
-           ../../src/KDToolsCore/kdsavefile.h \
-           ../../src/KDToolsCore/kdmetamethoditerator.h
+HEADERS += ../../src/kdupdaterufcompresscommon_p.h \
+           ../../src/kdupdaterufuncompressor_p.h \
+           ../../src/kdsavefile.h \
+           ../../src/kdmetamethoditerator.h
 
-SOURCES += ../../src/KDUpdater/kdupdaterufuncompressor.cpp \
-           ../../src/KDToolsCore/kdsavefile.cpp \
-           ../../src/KDToolsCore/kdmetamethoditerator.cpp
+SOURCES += ../../src/kdupdaterufuncompressor.cpp \
+           ../../src/kdsavefile.cpp \
+           ../../src/kdmetamethoditerator.cpp

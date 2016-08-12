@@ -23,13 +23,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <KDUpdater/kdupdater.h>
-#include <KDUpdater/kdupdaterupdate.h>
-#include <KDUpdater/kdupdaterupdatesdialog.h>
-#include <KDUpdater/kdupdaterpackagesview.h>
-#include <KDUpdater/kdupdaterupdateinstaller.h>
-#include <KDUpdater/kdupdaterupdatefinder.h>
-#include <KDUpdater/kdupdaterupdatesourcesview.h>
+#include <kdupdater.h>
+#include <kdupdaterupdate.h>
+#include <kdupdaterupdatesdialog.h>
+#include <kdupdaterpackagesview.h>
+#include <kdupdaterupdateinstaller.h>
+#include <kdupdaterupdatefinder.h>
+#include <kdupdaterupdatesourcesview.h>
 
 #include <QToolBar>
 #include <QAction>

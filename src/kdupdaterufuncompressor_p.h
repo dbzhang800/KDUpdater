@@ -20,26 +20,41 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
-
-#include <QDialog>
+#ifndef __KDTOOLS_KDUPDATERUFUNCOMPRESSOR_P_H__
+#define __KDTOOLS_KDUPDATERUFUNCOMPRESSOR_P_H__
 
 #include <pimpl_ptr.h>
-#include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
+#include <QtCore/QCoreApplication>
+
+QT_BEGIN_NAMESPACE
+class QString;
+QT_END_NAMESPACE
+
+namespace KDUpdater
 {
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+    class KDTOOLS_UPDATER_EXPORT UFUncompressor
+    {
+        Q_DECLARE_TR_FUNCTIONS(KDUpdater::UFUncompressor)
 
-private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
+    public:
+        UFUncompressor();
+        ~UFUncompressor();
 
-};
+        QString errorString() const;
 
-#endif // UPDATERDIALOG_H
+        void setFileName(const QString& fileName);
+        QString fileName() const;
+
+        void setDestination(const QString& dest);
+        QString destination() const;
+
+        bool uncompress();
+
+    private:
+        class Private;
+        kdtools::pimpl_ptr< Private > d;
+    };
+}
+
+#endif

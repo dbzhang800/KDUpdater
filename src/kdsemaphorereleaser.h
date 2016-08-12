@@ -20,26 +20,25 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS__CORE__KDSEMAPHORERELEASER_H__
+#define __KDTOOLS__CORE__KDSEMAPHORERELEASER_H__
 
-#include <QDialog>
-
-#include <pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
-{
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+QT_BEGIN_NAMESPACE
+class QSemaphore;
+QT_END_NAMESPACE
 
+class KDTOOLSCORE_EXPORT KDSemaphoreReleaser KDAB_FINAL_CLASS {
+    Q_DISABLE_COPY( KDSemaphoreReleaser )
+public:
+    explicit KDSemaphoreReleaser( QSemaphore * sem, int count=1 );
+    explicit KDSemaphoreReleaser( QSemaphore & sem, int count=1 );
+    ~KDSemaphoreReleaser();
 private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
-
+    QSemaphore * const sem;
+    const int count;
 };
 
-#endif // UPDATERDIALOG_H
+#endif /* __KDTOOLS__CORE__KDSEMAPHORERELEASER_H__ */
+

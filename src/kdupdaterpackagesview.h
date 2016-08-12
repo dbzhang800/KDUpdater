@@ -20,26 +20,33 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS_KDUPDATERPACKAGESVIEW_H__
+#define __KDTOOLS_KDUPDATERPACKAGESVIEW_H__
 
-#include <QDialog>
-
+#include "kdupdater.h"
 #include <pimpl_ptr.h>
-#include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
+#include <QTreeView>
+
+namespace KDUpdater
 {
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+    class PackagesInfo;
 
-private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
+    class KDTOOLS_UPDATER_EXPORT PackagesView : public QTreeView
+    {
+        Q_OBJECT
 
-};
+    public:
+        explicit PackagesView(QWidget* parent=0);
+        ~PackagesView();
 
-#endif // UPDATERDIALOG_H
+        void setPackageInfo( const PackagesInfo* packageInfo );
+        const PackagesInfo* packagesInfo() const;
+
+    private:
+        class Private;
+        kdtools::pimpl_ptr< Private > d;
+    };
+}
+
+#endif

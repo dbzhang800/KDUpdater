@@ -20,26 +20,36 @@
 **
 **********************************************************************/
 
-#ifndef UPDATERDIALOG_H
-#define UPDATERDIALOG_H
+#ifndef __KDTOOLS_KDUPDATER_H__
+#define __KDTOOLS_KDUPDATER_H__
 
-#include <QDialog>
+#include <QtCore/QtGlobal>
 
-#include <pimpl_ptr.h>
 #include <kdtoolsglobal.h>
 
-class UpdaterDialog : public QDialog
+namespace KDUpdater
 {
-    Q_OBJECT
-    KDAB_DISABLE_COPY( UpdaterDialog );
-public:    
-    explicit UpdaterDialog( QWidget *parent = 0 );
-    ~UpdaterDialog();
+    enum Error
+    {
+        ENoError = 0,
+        ECannotStartTask,
+        ECannotPauseTask,
+        ECannotResumeTask,
+        ECannotStopTask,
+        EUnknown
+    };
 
-private:
-    class Private;
-    kdtools::pimpl_ptr< Private > d;
+    enum UpdateType {
+        PackageUpdate = 0x1,
+        CompatUpdate = 0x2,
+        NewPackage = 0x4,
+        AllUpdate = PackageUpdate | CompatUpdate
+    };
+    Q_DECLARE_FLAGS( UpdateTypes, UpdateType )
+    Q_DECLARE_OPERATORS_FOR_FLAGS( UpdateTypes )
 
-};
+    KDTOOLS_UPDATER_EXPORT int compareVersion(const QString& v1, const QString& v2);
+    KDTOOLS_UPDATER_EXPORT bool versionLessThan(const QString& v1, const QString& v2);
+}
 
-#endif // UPDATERDIALOG_H
+#endif
