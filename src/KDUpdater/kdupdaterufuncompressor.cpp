@@ -29,6 +29,7 @@
 #include <QFileInfo>
 //#include <QFSFileEngine>
 #include <QDebug>
+#include <QDataStream>
 
 #include <KDToolsCore/kdsavefile.h>
 

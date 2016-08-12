@@ -29,6 +29,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QPointer>
+#include <QDataStream>
 
 #include <cassert>
 

@@ -28,6 +28,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QMap>
 #include <QtCore/QString>
+#include <QtCore/QDataStream>
 
 #ifndef DOXYGEN_RUN
 
