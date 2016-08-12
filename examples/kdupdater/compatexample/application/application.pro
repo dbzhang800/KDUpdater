@@ -1,5 +1,4 @@
 include (../../../../KDUpdater.pri)
-include (../../kdupdater.pri)
 TEMPLATE    = app
 DESTDIR = $$KDUPDATER_BIN_PATH
 
