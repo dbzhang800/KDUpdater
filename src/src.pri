@@ -29,7 +29,6 @@ INSTALLHEADERS = \
            $$PWD/kdautopointer.h \
            $$PWD/kdsharedmemorylocker.h \
            $$PWD/kdlockedsharedmemorypointer.h \
-           $$PWD/kdthreadrunner.h \
            $$PWD/kdgenericfactory.h \
 #         $$PWD/kdvariantconverter.h \
            $$PWD/kdmetamethoditerator.h
@@ -67,7 +66,6 @@ SOURCES += $$PWD/kdupdaterpackagesinfo.cpp \
            $$PWD/pimpl_ptr.cpp \
            $$PWD/kdsharedmemorylocker.cpp \
            $$PWD/kdlockedsharedmemorypointer.cpp \
-           $$PWD/kdthreadrunner.cpp \
            $$PWD/kdgenericfactory.cpp \
 #          $$PWD/kdvariantconverter.cpp \
            $$PWD/kdmetamethoditerator.cpp
