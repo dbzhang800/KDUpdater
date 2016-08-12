@@ -21,10 +21,8 @@ INSTALLHEADERS = \
            $$PWD/kdupdaterupdatesourcesmodel.h \
            $$PWD/kdupdaterupdatesmodel.h \
            $$PWD/kdtoolsglobal.h \
-           $$PWD/kdsignalblocker.h \
            $$PWD/kdsemaphorereleaser.h \
            $$PWD/kdrect.h \
-           $$PWD/kdsignalspy.h \
            $$PWD/kdsavefile.h \
            $$PWD/kdautopointer.h \
            $$PWD/kdsharedmemorylocker.h \
@@ -57,10 +55,8 @@ SOURCES += $$PWD/kdupdaterpackagesinfo.cpp \
            $$PWD/kdupdaterufcompresscommon.cpp \
            $$PWD/kdupdaterupdatesmodel.cpp \
            $$PWD/kdtoolsglobal.cpp \
-           $$PWD/kdsignalblocker.cpp \
            $$PWD/kdsemaphorereleaser.cpp \
            $$PWD/kdrect.cpp \
-           $$PWD/kdsignalspy.cpp \
            $$PWD/kdsavefile.cpp \
            $$PWD/kdautopointer.cpp \
            $$PWD/pimpl_ptr.cpp \
