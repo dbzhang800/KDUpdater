@@ -33,7 +33,7 @@
 
 #include <iostream>
 
-class MainWindow::Private : QObject
+class MainWindow::Private : public QObject
 {
     Q_OBJECT
 public:
