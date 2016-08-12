@@ -31,12 +31,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QSet>
 
-#if defined( KDUPDATERGUIWEBVIEW )
-#include <QtWebKit/QWebView>
-#elif defined( KDUPDATERGUITEXTBROWSER )
 #include <QTextBrowser>
-#endif
-
 #include "ui_updatesdialog.h"
 
 /*!
@@ -229,11 +224,7 @@ void UpdatesDialog::Private::setCurrentUpdate( int index )
     const QDir appdir( update->target()->directory() );
     if (update->data( QLatin1String( "ReleaseNotes" ) ).isValid()) {
         ui.releaseNotesGroup->show();
-#if defined( KDUPDATERGUIWEBVIEW )
-        ui.releaseNotesView->setUrl( update->data( QLatin1String( "ReleaseNotes" ) ).toUrl() );
-#elif defined( KDUPDATERGUITEXTBROWSER )
         ui.releaseNotesView->setSource( update->data( QLatin1String( "ReleaseNotes" ) ).toUrl());
-#endif
     }
     else {
         ui.releaseNotesGroup->hide();

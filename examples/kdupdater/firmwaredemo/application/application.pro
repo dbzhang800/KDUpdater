@@ -7,17 +7,6 @@ DESTDIR = $$KDUPDATER_BIN_PATH
 QT          += widgets script
 TARGET      = FirmwareDemo
 
-CONFIG += kdupdaterguitextbrowser
-
-kdupdaterguitextbrowser {
-    DEFINES += KDUPDATERGUITEXTBROWSER KDUPDATERVIEW=QTextBrowser
-    QT += gui
-}
-kdupdaterguiwebview {
-    DEFINES += KDUPDATERGUIWEBVIEW KDUPDATERVIEW=QWebView
-    QT += gui webkit
-}
-
 EXAMPLE_APP_DIR="$$OUT_PWD/appdir"
 
 DEFINES += EXAMPLE_APP_DIR="\\\"$$EXAMPLE_APP_DIR\\\""

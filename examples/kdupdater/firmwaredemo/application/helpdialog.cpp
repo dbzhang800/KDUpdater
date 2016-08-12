@@ -23,11 +23,7 @@
 #include "helpdialog.h"
 
 #include <QVBoxLayout>
-#if defined( KDUPDATERGUIWEBVIEW )
-#include <QtWebKit/QWebView>
-#elif defined( KDUPDATERGUITEXTBROWSER )
 #include <QTextBrowser>
-#endif
 #include <QDebug>
 
 HelpDialog::HelpDialog( QWidget* parent)
@@ -36,7 +32,7 @@ HelpDialog::HelpDialog( QWidget* parent)
     QVBoxLayout* layout = new QVBoxLayout;
     setLayout( layout );
 
-    KDUPDATERVIEW* webView = new KDUPDATERVIEW( this );
+    QTextBrowser* webView = new QTextBrowser( this );
     layout->addWidget( webView );
 
     const QString text = tr(
@@ -58,9 +54,6 @@ HelpDialog::HelpDialog( QWidget* parent)
         This update wasn't available the first time because it needs the compatibility level <b>2</b>." );
 
     webView->setHtml( text );
-#if defined( KDUPDATERGUIWEBVIEW )
-    webView->page()->setLinkDelegationPolicy( QWebPage::DelegateAllLinks );
-#endif
     connect( webView, SIGNAL(linkClicked(QUrl)),
              this, SLOT(clickLink(QUrl)) );
 

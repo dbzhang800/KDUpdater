@@ -82,7 +82,7 @@
          </widget>
         </item>
         <item>
-         <widget class="KDUPDATERVIEW" native="1" name="releaseNotesView" >
+         <widget class="QTextBrowser" native="1" name="releaseNotesView" >
           <property name="minimumSize" >
            <size>
             <width>400</width>
@@ -199,14 +199,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KDUPDATERVIEW</class>
-   <extends>QWidget</extends>
-   <header>qwidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

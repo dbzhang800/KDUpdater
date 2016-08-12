@@ -80,13 +80,6 @@ kdupdatergui {
                       $$PWD/kdupdaterpackagesview.h \
                       $$PWD/kdupdaterupdatesourcesview.h
 
-    kdupdaterguitextbrowser {
-        DEFINES += KDUPDATERGUITEXTBROWSER KDUPDATERVIEW=QTextBrowser
-    }
-    kdupdaterguiwebview {
-        DEFINES += KDUPDATERGUIWEBVIEW KDUPDATERVIEW=QWebView
-        QT += webkit
-    }
     FORMS   +=        $$PWD/addupdatesourcedialog.ui \
                       $$PWD/updatesdialog.ui
 

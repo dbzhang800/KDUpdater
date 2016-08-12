@@ -24,6 +24,6 @@ DEFINES += QT_NO_KEYWORDS QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII QT_NO_CAST_F
 
 DEFINES += BUILD_KDUPDATER
 
-CONFIG += kdupdatergui kdupdaterguitextbrowser
+CONFIG += kdupdatergui
 
 include (src.pri)
