@@ -1,5 +1,5 @@
 TEMPLATE = app
-include (../../../kdtools.pri)
+include (../../../KDUpdater.pri)
 QT += widgets
 SOURCES += ../main.cpp \
     ../mainwindow.cpp \
@@ -11,8 +11,8 @@ HEADERS += ../mainwindow.h \
 DEFINES += APP_VERSION="\\\"1.1\\\""
 RESOURCES += ../kdupdaterdemo.qrc
 
-SRCREPODIR = $$KDTOOLS_SOURCE_TREE/examples/data/kdupdaterdemo/repository
-DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/updateserver
+SRCREPODIR = $$KDUPDATER_SOURCE_TREE/examples/data/kdupdaterdemo/repository
+DESTREPODIR = $$KDUPDATER_BUILD_TREE/examples/kdupdaterdemo/updateserver
 DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 
 win32{
@@ -22,7 +22,7 @@ win32{
     BUILD_DIR  = $$replace(OUT_PWD, /, \\)
     SRCREPODIR = $$replace(SRCREPODIR, /, \\)
     DESTREPODIR = $$replace(DESTREPODIR, /, \\)
-    WINDESTDIR = $$replace(KDTOOLS_BIN_PATH, /, \\)
+    WINDESTDIR = $$replace(KDUPDATER_BIN_PATH, /, \\)
 
     COPYSCRIPT = copy $$SOURCE_DIR\\postbuild.bat $$BUILD_DIR\\postbuild.bat
     QMAKE_PRE_LINK += $$COPYSCRIPT
@@ -44,7 +44,7 @@ win32{
     # copy generated application to dest-dir, then create the .kvz file
     CREATEREPOTARGET.commands += cp -R $$OUT_PWD/kdupdaterdemov2$$SUFFIX $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
     macx:CREATEREPOTARGET.commands += mv $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemov2 $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX/Contents/MacOS/kdupdaterdemo &&
-    CREATEREPOTARGET.commands += $$KDTOOLS_BIN_PATH/ufcreator $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/ &&
+    CREATEREPOTARGET.commands += $$KDUPDATER_BIN_PATH/ufcreator $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/ &&
 #    CREATEREPOTARGET.commands += rm -rf $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX/kdupdaterdemo$$SUFFIX &&
     CREATEREPOTARGET.commands += mv $$OUT_PWD/kdupdaterdemo_$$FOLDERSUFFIX$$ext $$DESTREPODIR/kdupdaterdemo_$$FOLDERSUFFIX$$ext  #&&
 #    CREATEREPOTARGET.commands += rm -rf $$OUT_PWD/kdupdaterdemov2$$SUFFIX

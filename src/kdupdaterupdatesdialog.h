@@ -37,7 +37,7 @@ namespace KDUpdater
 {
     class Update;
 
-    class KDTOOLS_UPDATER_EXPORT UpdatesDialog : public QDialog
+    class KDUPDATER_EXPORT UpdatesDialog : public QDialog
     {
         Q_OBJECT
 

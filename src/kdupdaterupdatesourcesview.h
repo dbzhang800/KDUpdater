@@ -34,7 +34,7 @@ namespace KDUpdater
     struct UpdateSourceInfo;
     class UpdateSourcesInfo;
 
-    class KDTOOLS_UPDATER_EXPORT EditUpdateSourceDialog : public QDialog
+    class KDUPDATER_EXPORT EditUpdateSourceDialog : public QDialog
     {
         Q_OBJECT
     public:
@@ -52,7 +52,7 @@ namespace KDUpdater
         kdtools::pimpl_ptr< Private > d;
     };
 
-    class KDTOOLS_UPDATER_EXPORT UpdateSourcesView : public QTreeView
+    class KDUPDATER_EXPORT UpdateSourcesView : public QTreeView
     {
         Q_OBJECT
 

@@ -37,7 +37,7 @@ class QDebug;
 template <typename T> class QVector;
 QT_END_NAMESPACE
 
-class KDTOOLSCORE_EXPORT KDSignalSpy : public QObject {
+class KDUPDATER_EXPORT KDSignalSpy : public QObject {
 public:
     KDSignalSpy();
     explicit KDSignalSpy( QObject * object, int level=0 );
@@ -66,7 +66,7 @@ private:
 };
 
 #ifndef QT_NO_DEBUG_STREAM
-KDTOOLSCORE_EXPORT QDebug operator<<( QDebug d, const KDSignalSpy & spy );
+KDUPDATER_EXPORT QDebug operator<<( QDebug d, const KDSignalSpy & spy );
 #endif
 
 struct KDSignalSpy::Event {

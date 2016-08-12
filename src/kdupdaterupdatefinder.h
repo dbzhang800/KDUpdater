@@ -27,9 +27,9 @@
 #include "kdupdatertask.h"
 #include <pimpl_ptr.h>
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
 QT_BEGIN_NAMESPACE
 class QUrl;
@@ -44,7 +44,7 @@ namespace KDUpdater
     class Update;
     struct UpdateSourceInfo;
 
-    class KDTOOLS_UPDATER_EXPORT UpdateFinder : public Task
+    class KDUPDATER_EXPORT UpdateFinder : public Task
     {
         Q_OBJECT
         Q_PROPERTY( UpdateTypes updateType READ updateType WRITE setUpdateType )
@@ -63,9 +63,9 @@ namespace KDUpdater
         void setPlatformIdentifier( const QString & platformIdentifier );
         QString platformIdentifier() const;
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Application * application() const { return dynamic_cast<Application*>( target() ); }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
     private:
         void doRun();

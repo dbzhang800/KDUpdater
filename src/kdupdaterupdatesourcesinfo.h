@@ -30,15 +30,15 @@
 #include <QtCore/QObject>
 #include <QtCore/QUrl>
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
 namespace KDUpdater
 {
     class Target;
 
-    struct KDTOOLS_UPDATER_EXPORT UpdateSourceInfo
+    struct KDUPDATER_EXPORT UpdateSourceInfo
     {
         UpdateSourceInfo();
 
@@ -49,11 +49,11 @@ namespace KDUpdater
         int priority;
     };
 
-    KDTOOLS_UPDATER_EXPORT bool operator==( const UpdateSourceInfo & lhs, const UpdateSourceInfo & rhs );
-    KDTOOLS_UPDATER_EXPORT bool operator<( const UpdateSourceInfo & lhs, const UpdateSourceInfo & rhs );
-    KDTOOLS_MAKE_RELATION_OPERATORS( UpdateSourceInfo, inline )
+    KDUPDATER_EXPORT bool operator==( const UpdateSourceInfo & lhs, const UpdateSourceInfo & rhs );
+    KDUPDATER_EXPORT bool operator<( const UpdateSourceInfo & lhs, const UpdateSourceInfo & rhs );
+    KDUPDATER_MAKE_RELATION_OPERATORS( UpdateSourceInfo, inline )
 
-    class KDTOOLS_UPDATER_EXPORT UpdateSourcesInfo : public QObject
+    class KDUPDATER_EXPORT UpdateSourcesInfo : public QObject
     {
         Q_OBJECT
         Q_PROPERTY( Error error READ error )
@@ -91,9 +91,9 @@ namespace KDUpdater
         void removeUpdateSourceInfoAt(int index);
         void setUpdateSourceInfoAt(int index, const UpdateSourceInfo& info);
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Application * application() const { return dynamic_cast<Application*>( target() ); }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
     protected:
         explicit UpdateSourcesInfo( Target * target );

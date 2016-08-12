@@ -20,8 +20,8 @@
 **
 **********************************************************************/
 
-#ifndef KDTOOLS_KDUPDATERFILEDOWNLOADER_H
-#define KDTOOLS_KDUPDATERFILEDOWNLOADER_H
+#ifndef KDUPDATER_KDUPDATERFILEDOWNLOADER_H
+#define KDUPDATER_KDUPDATERFILEDOWNLOADER_H
 
 #include "kdupdater.h"
 #include <pimpl_ptr.h>
@@ -32,12 +32,12 @@
 
 namespace KDUpdater
 {
-    KDTOOLS_UPDATER_EXPORT QByteArray calculateHash( QIODevice* device, QCryptographicHash::Algorithm algo );
-    KDTOOLS_UPDATER_EXPORT QByteArray calculateHash( const QString& path, QCryptographicHash::Algorithm algo );
+    KDUPDATER_EXPORT QByteArray calculateHash( QIODevice* device, QCryptographicHash::Algorithm algo );
+    KDUPDATER_EXPORT QByteArray calculateHash( const QString& path, QCryptographicHash::Algorithm algo );
     
     class HashVerificationJob;
 
-    class KDTOOLS_UPDATER_EXPORT FileDownloader : public QObject
+    class KDUPDATER_EXPORT FileDownloader : public QObject
     {
         Q_OBJECT
         Q_PROPERTY( bool autoRemoveDownloadedFile READ isAutoRemoveDownloadedFile WRITE setAutoRemoveDownloadedFile )

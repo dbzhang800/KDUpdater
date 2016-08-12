@@ -36,7 +36,7 @@ namespace KDUpdater
     class UpdateSourcesInfo;
     class Task;
 
-    class KDTOOLS_UPDATER_EXPORT Target {
+    class KDUPDATER_EXPORT Target {
         DOXYGEN_PROPERTY( QString directory READ directory WRITE setDirectory )
         DOXYGEN_PROPERTY( QString name READ name )
         DOXYGEN_PROPERTY( QString version READ version )

@@ -36,7 +36,7 @@ QT_END_NAMESPACE
 namespace kdtools {
 #endif
 
-class KDTOOLSCORE_EXPORT KDSharedMemoryLocker KDAB_FINAL_CLASS {
+class KDUPDATER_EXPORT KDSharedMemoryLocker KDAB_FINAL_CLASS {
     Q_DISABLE_COPY( KDSharedMemoryLocker )
 public:
     explicit KDSharedMemoryLocker( QSharedMemory * mem );

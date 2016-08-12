@@ -1,7 +1,7 @@
-include (../../../kdtools.pri)
+include (../../../KDUpdater.pri)
 
 TEMPLATE = app
-DESTDIR = $$KDTOOLS_BIN_PATH
+DESTDIR = $$KDUPDATER_BIN_PATH
 QT += widgets
 SOURCES += ../main.cpp \
     ../mainwindow.cpp \
@@ -11,7 +11,7 @@ HEADERS += ../mainwindow.h \
     ../updaterdialog.h \
     ../updater.h
 DEFINES += APP_VERSION="\\\"1.0\\\""
-DESTREPODIR = $$KDTOOLS_BUILD_TREE/examples/kdupdaterdemo/updateserver
+DESTREPODIR = $$KDUPDATER_BUILD_TREE/examples/kdupdaterdemo/updateserver
 
 DEFINES += REPO_DIR="\\\"$$DESTREPODIR\\\""
 RESOURCES += ../kdupdaterdemo.qrc

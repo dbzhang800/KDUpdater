@@ -32,7 +32,7 @@
 namespace KDUpdater
 {
 
-    class KDTOOLS_UPDATER_EXPORT UpdatesModel : public QAbstractTableModel
+    class KDUPDATER_EXPORT UpdatesModel : public QAbstractTableModel
     {
         Q_OBJECT
     public:

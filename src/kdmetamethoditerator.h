@@ -27,7 +27,7 @@
 
 #include <QtCore/QMetaMethod>
 
-class KDTOOLSCORE_EXPORT KDMetaMethodIterator KDAB_FINAL_CLASS
+class KDUPDATER_EXPORT KDMetaMethodIterator KDAB_FINAL_CLASS
 {
 public:
     enum AccessType

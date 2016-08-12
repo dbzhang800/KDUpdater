@@ -20,8 +20,8 @@
 **
 **********************************************************************/
 
-#ifndef KDTOOLS_KDUPDATERFILEDOWNLOADERFACTORY_H
-#define KDTOOLS_KDUPDATERFILEDOWNLOADERFACTORY_H
+#ifndef KDUPDATER_KDUPDATERFILEDOWNLOADERFACTORY_H
+#define KDUPDATER_KDUPDATERFILEDOWNLOADERFACTORY_H
 
 #include "kdupdater.h"
 #include <pimpl_ptr.h>
@@ -38,7 +38,7 @@ namespace KDUpdater
 {
     class FileDownloader;
 
-    class KDTOOLS_UPDATER_EXPORT FileDownloaderFactory : public KDGenericFactory< FileDownloader >
+    class KDUPDATER_EXPORT FileDownloaderFactory : public KDGenericFactory< FileDownloader >
     {
         KDAB_DISABLE_COPY( FileDownloaderFactory );
     public:

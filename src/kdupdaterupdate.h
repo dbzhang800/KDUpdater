@@ -27,7 +27,7 @@
 #include "kdupdatertask.h"
 #include <pimpl_ptr.h>
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
 #endif
 
@@ -49,7 +49,7 @@ namespace KDUpdater
     class UpdateFinder;
     class UpdateOperation;
 
-    class KDTOOLS_UPDATER_EXPORT Update : public Task
+    class KDUPDATER_EXPORT Update : public Task
     {
         Q_OBJECT
         Q_PROPERTY( bool canDownload READ canDownload )
@@ -82,9 +82,9 @@ namespace KDUpdater
         quint64 compressedSize() const;
         quint64 uncompressedSize() const;
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Application * application() const { return dynamic_cast<Application*>( target() ); }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
     private:
         Q_PRIVATE_SLOT( d, void downloadProgress( int ) )

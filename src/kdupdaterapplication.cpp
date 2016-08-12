@@ -22,7 +22,7 @@
 
 #include "kdupdaterapplication.h"
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 
 using namespace KDUpdater;
 

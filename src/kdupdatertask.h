@@ -33,7 +33,7 @@ namespace KDUpdater
 
     class Target;
 
-    class KDTOOLS_UPDATER_EXPORT Task : public QObject
+    class KDUPDATER_EXPORT Task : public QObject
     {
         Q_OBJECT
         Q_PROPERTY( int capabilities READ capabilities )

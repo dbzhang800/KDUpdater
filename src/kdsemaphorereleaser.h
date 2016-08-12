@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class QSemaphore;
 QT_END_NAMESPACE
 
-class KDTOOLSCORE_EXPORT KDSemaphoreReleaser KDAB_FINAL_CLASS {
+class KDUPDATER_EXPORT KDSemaphoreReleaser KDAB_FINAL_CLASS {
     Q_DISABLE_COPY( KDSemaphoreReleaser )
 public:
     explicit KDSemaphoreReleaser( QSemaphore * sem, int count=1 );

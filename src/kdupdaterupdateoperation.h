@@ -28,9 +28,9 @@
 
 #include "kdupdaterupdateoperationfactory.h"
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
 #include <QtCore/QCoreApplication>
 #include <QtCore/QVariant>
@@ -44,7 +44,7 @@ namespace KDUpdater
 {
     class Target;
 
-    class KDTOOLS_UPDATER_EXPORT UpdateOperation
+    class KDUPDATER_EXPORT UpdateOperation
     {
         Q_DECLARE_TR_FUNCTIONS(UpdateOperation)
 
@@ -103,10 +103,10 @@ namespace KDUpdater
         void setError( int error );
         void setError( int error, const QString& errorString );
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         void setApplication( Application * a ) { setTarget( a ); }
         Application * application() const { return dynamic_cast<Application*>( target() ); }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
     private:
         QVariantMap values() const;

@@ -37,7 +37,7 @@ QT_END_NAMESPACE
 
 class KDLogDevice;
 
-class KDTOOLSCORE_EXPORT KDLog {
+class KDUPDATER_EXPORT KDLog {
     Q_DISABLE_COPY( KDLog )
     DOXYGEN_PROPERTY( bool qDebugMessagesRedirected READ qDebugMessagesRedirected WRITE setQDebugMessagesRedirected )
 public:
@@ -86,7 +86,7 @@ private:
 
 Q_DECLARE_OPERATORS_FOR_FLAGS( KDLog::Severity )
 
-class KDTOOLSCORE_EXPORT KDLogDevice {
+class KDUPDATER_EXPORT KDLogDevice {
     Q_DISABLE_COPY( KDLogDevice )
 public:
     KDLogDevice();
@@ -95,10 +95,10 @@ public:
     virtual void log( KDLog::Severity severity, const QString & msg ) = 0;
 
 private:
-    KDTOOLS_DECLARE_PRIVATE_BASE( KDLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_BASE( KDLogDevice );
 };
 
-class KDTOOLSCORE_EXPORT KDEncodingLogDevice : public KDLogDevice {
+class KDUPDATER_EXPORT KDEncodingLogDevice : public KDLogDevice {
 public:
     KDEncodingLogDevice();
     explicit KDEncodingLogDevice( const QTextCodec * codec );
@@ -113,10 +113,10 @@ private:
     virtual void doLogEncoded( KDLog::Severity severity, const QByteArray & msg ) = 0;
 
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDEncodingLogDevice, KDLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDEncodingLogDevice, KDLogDevice );
 };
 
-class KDTOOLSCORE_EXPORT KDStderrLogDevice : public KDEncodingLogDevice {
+class KDUPDATER_EXPORT KDStderrLogDevice : public KDEncodingLogDevice {
 public:
     KDStderrLogDevice();
     explicit KDStderrLogDevice( const QTextCodec * codec );
@@ -125,10 +125,10 @@ public:
 private:
     void doLogEncoded( KDLog::Severity severity, const QByteArray & msg ) KDAB_OVERRIDE;
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDStderrLogDevice, KDEncodingLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDStderrLogDevice, KDEncodingLogDevice );
 };
 
-class KDTOOLSCORE_EXPORT KDFileLogDevice : public KDEncodingLogDevice {
+class KDUPDATER_EXPORT KDFileLogDevice : public KDEncodingLogDevice {
 public:
     explicit KDFileLogDevice( const QString & filename, QIODevice::OpenMode mode=QIODevice::Append );
     explicit KDFileLogDevice( const QString & filename, const QTextCodec * codec, QIODevice::OpenMode mode=QIODevice::Append );
@@ -138,10 +138,10 @@ private:
     void doLogEncoded( KDLog::Severity severity, const QByteArray & msg );
 
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDFileLogDevice, KDEncodingLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDFileLogDevice, KDEncodingLogDevice );
 };
 
-class KDTOOLSCORE_EXPORT KDSignalLogDevice : public QObject, public KDLogDevice {
+class KDUPDATER_EXPORT KDSignalLogDevice : public QObject, public KDLogDevice {
     Q_OBJECT
 public:
     KDSignalLogDevice();
@@ -156,10 +156,10 @@ Q_SIGNALS:
     void error( const QString & msg );
 
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDSignalLogDevice, KDLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDSignalLogDevice, KDLogDevice );
 };
 
-class KDTOOLSCORE_EXPORT KDSystemLogDevice : public KDEncodingLogDevice {
+class KDUPDATER_EXPORT KDSystemLogDevice : public KDEncodingLogDevice {
 public:
     enum Facility { User, Daemon, Auth };
 
@@ -170,12 +170,12 @@ public:
 private:
     void doLogEncoded( KDLog::Severity severity, const QByteArray & msg ) KDAB_OVERRIDE;
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDSystemLogDevice, KDEncodingLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDSystemLogDevice, KDEncodingLogDevice );
     Facility mFacility;
     void * mInternal;
 };
 
-class KDTOOLSCORE_EXPORT KDCompositeLogDevice : public KDLogDevice {
+class KDUPDATER_EXPORT KDCompositeLogDevice : public KDLogDevice {
 public:
     KDCompositeLogDevice();
     ~KDCompositeLogDevice();
@@ -185,7 +185,7 @@ public:
     void log( KDLog::Severity severity, const QString & msg ) KDAB_OVERRIDE;
 
 private:
-    KDTOOLS_DECLARE_PRIVATE_DERIVED( KDCompositeLogDevice, KDLogDevice );
+    KDUPDATER_DECLARE_PRIVATE_DERIVED( KDCompositeLogDevice, KDLogDevice );
 };
 
 #endif /* __KDTOOLSCORE_KDLOG_H__ */

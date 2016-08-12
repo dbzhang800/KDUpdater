@@ -32,7 +32,7 @@ namespace KDUpdater
 {
     class PackagesInfo;
 
-    class KDTOOLS_UPDATER_EXPORT PackagesView : public QTreeView
+    class KDUPDATER_EXPORT PackagesView : public QTreeView
     {
         Q_OBJECT
 

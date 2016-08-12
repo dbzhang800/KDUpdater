@@ -28,7 +28,7 @@
 
 #include <pimpl_ptr.h>
 
-class KDTOOLSCORE_EXPORT KDThreadRunnerBase : public QThread
+class KDUPDATER_EXPORT KDThreadRunnerBase : public QThread
 {
 public:
     ~KDThreadRunnerBase();

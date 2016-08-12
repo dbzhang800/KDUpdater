@@ -31,7 +31,7 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
 #endif
 
@@ -40,7 +40,7 @@ namespace KDUpdater
     class Target;
     class UpdateInstaller;
 
-    struct KDTOOLS_UPDATER_EXPORT PackageInfo
+    struct KDUPDATER_EXPORT PackageInfo
     {
         QString name;
         QString pixmap;
@@ -53,12 +53,12 @@ namespace KDUpdater
         quint64 uncompressedSize;
     };
 
-    class KDTOOLS_UPDATER_EXPORT PackagesInfo : public QObject
+    class KDUPDATER_EXPORT PackagesInfo : public QObject
     {
         Q_OBJECT
         Q_PROPERTY( QString targetName READ targetName WRITE setTargetName )
         Q_PROPERTY( QString targetVersion READ targetVersion WRITE setTargetVersion )
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Q_PROPERTY( QString applicationName READ applicationName WRITE setApplicationName )
         Q_PROPERTY( QString applicationVersion READ applicationVersion WRITE setApplicationVersion )
 #endif
@@ -104,7 +104,7 @@ namespace KDUpdater
         bool updatePackage( const QString &pkgName, const QString &version, const QDate &date );
         bool removePackage( const QString& pkgName );
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Application * application() const { return dynamic_cast<Application*>( target() ); }
         void setApplicationName( const QString & n ) { setTargetName( n ); }
         QString applicationName() const { return targetName(); }

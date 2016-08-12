@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class QObject;
 QT_END_NAMESPACE
 
-class KDTOOLSCORE_EXPORT KDSignalBlocker KDAB_FINAL_CLASS {
+class KDUPDATER_EXPORT KDSignalBlocker KDAB_FINAL_CLASS {
     Q_DISABLE_COPY( KDSignalBlocker )
 public:
     explicit KDSignalBlocker( QObject * o );

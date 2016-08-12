@@ -33,7 +33,7 @@
 #ifndef DOXYGEN_RUN
 
 template< typename T_Identifier, template< typename U, typename V > class T_Map >
-class KDTOOLSCORE_EXPORT KDGenericFactoryBase
+class KDUPDATER_EXPORT KDGenericFactoryBase
 {
 protected:
     ~KDGenericFactoryBase() {}

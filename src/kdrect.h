@@ -36,7 +36,7 @@
 # define KDRECT_CONSTEXPR_FOR_QFLAGS
 #endif
 
-class KDTOOLSCORE_EXPORT KDPoint KDAB_FINAL_CLASS {
+class KDUPDATER_EXPORT KDPoint KDAB_FINAL_CLASS {
 public:
     KDAB_DECL_CONSTEXPR KDPoint();
     KDAB_DECL_CONSTEXPR KDPoint( int x, int y );
@@ -88,7 +88,7 @@ inline KDPoint operator-( const KDPoint & lhs, const QPoint & rhs ) {
     return KDPoint( lhs.x() - rhs.x(), lhs.y() - rhs.y() );
 }
 
-class KDTOOLSCORE_EXPORT KDRect KDAB_FINAL_CLASS {
+class KDUPDATER_EXPORT KDRect KDAB_FINAL_CLASS {
     KDAB_DECL_CONSTEXPR KDRect( int x1, int y1, int x2, int y2 );
 public:
     KDAB_DECL_CONSTEXPR KDRect();

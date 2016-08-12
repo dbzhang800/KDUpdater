@@ -27,7 +27,7 @@
 
 #include <QtCore/QFile>
 
-class KDTOOLSCORE_EXPORT KDSaveFile : public QIODevice
+class KDUPDATER_EXPORT KDSaveFile : public QIODevice
 {
     Q_OBJECT
 public:

@@ -1,8 +1,3 @@
-TEMPLATE    = lib
-
-QT          += xml network
-QT -= gui
-
 win32 {
     DEFINES	+= _CRT_SECURE_NO_DEPRECATE
 }

@@ -23,7 +23,7 @@
 #ifndef __KDTOOLS_KDUPDATERAPPLICATION_H__
 #define __KDTOOLS_KDUPDATERAPPLICATION_H__
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 
 #include "kdupdatertarget.h"
 
@@ -31,7 +31,7 @@
 
 namespace KDUpdater {
 
-    class KDTOOLS_UPDATER_EXPORT Application : public Target 
+    class KDUPDATER_EXPORT Application : public Target 
     {
     public:
         Application();
@@ -44,6 +44,6 @@ namespace KDUpdater {
     };
 
 }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
 #endif /* __KDTOOLS_KDUPDATERAPPLICATION_H__ */

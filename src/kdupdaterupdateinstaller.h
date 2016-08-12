@@ -27,9 +27,9 @@
 #include "kdupdatertask.h"
 #include <pimpl_ptr.h>
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
 # include "kdupdaterapplication.h"
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
 QT_BEGIN_NAMESPACE
 template< typename T >
@@ -41,7 +41,7 @@ namespace KDUpdater
     class Target;
     class Update;
 
-    class KDTOOLS_UPDATER_EXPORT UpdateInstaller : public Task
+    class KDUPDATER_EXPORT UpdateInstaller : public Task
     {
         Q_OBJECT
 
@@ -54,9 +54,9 @@ namespace KDUpdater
         void setUpdatesToInstall(const QList<Update*>& updates);
         QList<Update*> updatesToInstall() const;
 
-#ifndef KDTOOLS_NO_COMPAT
+#ifndef KDUPDATER_NO_COMPAT
         Application * application() const { return dynamic_cast<Application*>( target() ); }
-#endif // KDTOOLS_NO_COMPAT
+#endif // KDUPDATER_NO_COMPAT
 
     private:
         void doRun();

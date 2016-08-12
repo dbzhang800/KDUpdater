@@ -37,7 +37,7 @@ namespace {
     static inline bool operator==( const Version & lhs, const Version & rhs ) {
 	return std::equal( lhs.v, lhs.v + 3, rhs.v );
     }
-    KDTOOLS_MAKE_RELATION_OPERATORS( Version, static inline )
+    KDUPDATER_MAKE_RELATION_OPERATORS( Version, static inline )
 }
 
 static Version kdParseQtVersion( const char * const version ) {

@@ -1,6 +1,6 @@
 TEMPLATE = app
-include (../../kdtools.pri)
-DESTDIR = $$KDTOOLS_BIN_PATH
+include (../../KDUpdater.pri)
+DESTDIR = $$KDUPDATER_BIN_PATH
 
 QT += widgets
 

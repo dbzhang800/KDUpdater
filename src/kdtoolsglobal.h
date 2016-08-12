@@ -36,33 +36,11 @@
 #  define QT_END_NAMESPACE
 #endif
 
-#ifdef KDTOOLS_SHARED
-#  ifdef BUILD_SHARED_KDTOOLSCORE
-#    define KDTOOLSCORE_EXPORT Q_DECL_EXPORT
-#  else
-#    define KDTOOLSCORE_EXPORT Q_DECL_IMPORT
-#  endif
-#  ifdef BUILD_SHARED_KDTOOLSGUI
-#    define KDTOOLSGUI_EXPORT Q_DECL_EXPORT
-#  else
-#    define KDTOOLSGUI_EXPORT Q_DECL_IMPORT
-#  endif
-#  ifdef BUILD_SHARED_KDTOOLSXML
-#    define KDTOOLSXML_EXPORT Q_DECL_EXPORT
-#  else
-#    define KDTOOLSXML_EXPORT Q_DECL_IMPORT
-#  endif
-#  ifdef BUILD_SHARED_KDUPDATER
-#    define KDTOOLS_UPDATER_EXPORT    Q_DECL_EXPORT
-#  else
-#    define KDTOOLS_UPDATER_EXPORT    Q_DECL_IMPORT
-#  endif
-#else // KDTOOLS_SHARED
-#  define KDTOOLSCORE_EXPORT
-#  define KDTOOLSGUI_EXPORT
-#  define KDTOOLSXML_EXPORT
-#  define KDTOOLS_UPDATER_EXPORT
-#endif // KDTOOLS_SHARED
+#ifdef BUILD_KDUPDATER
+#  define KDUPDATER_EXPORT Q_DECL_EXPORT
+#else
+#  define KDUPDATER_EXPORT Q_DECL_IMPORT
+#endif
 
 #define MAKEINCLUDES_EXPORT
 
@@ -93,7 +71,7 @@
     using Class::operator Class::unspecified_bool_type;
 #endif
 
-#define KDTOOLS_MAKE_RELATION_OPERATORS( Class, linkage )             \
+#define KDUPDATER_MAKE_RELATION_OPERATORS( Class, linkage )             \
     linkage bool operator>( const Class & lhs, const Class & rhs ) {  \
         return operator<( rhs, lhs );                                 \
     }                                                                 \
@@ -119,13 +97,13 @@ inline T & __kdtools__dereference_for_methodcall( T * o ) {
 
 #define KDAB_SET_OBJECT_NAME( x ) __kdtools__dereference_for_methodcall( x ).setObjectName( QLatin1String( #x ) )
 
-KDTOOLSCORE_EXPORT bool _kdCheckQtVersion_impl( int major, int minor=0, int patchlevel=0 );
+KDUPDATER_EXPORT bool _kdCheckQtVersion_impl( int major, int minor=0, int patchlevel=0 );
 static inline bool kdCheckQtVersion( unsigned int major, unsigned int minor=0, unsigned int patchlevel=0 ) {
     return (major<<16|minor<<8|patchlevel) <= static_cast<unsigned int>(QT_VERSION)
 	|| _kdCheckQtVersion_impl( major, minor, patchlevel );
 }
 
-#define KDTOOLS_DECLARE_PRIVATE_BASE( Class )                        \
+#define KDUPDATER_DECLARE_PRIVATE_BASE( Class )                        \
 protected:                                                           \
     class Private;                                                   \
     Private * d_func() { return _d; }                                \
@@ -136,7 +114,7 @@ private:                                                             \
 private:                                                             \
     Private * _d
 
-#define KDTOOLS_DECLARE_PRIVATE_DERIVED( Class, Base )                  \
+#define KDUPDATER_DECLARE_PRIVATE_DERIVED( Class, Base )                  \
 protected:                                                              \
     class Private;                                                      \
     Private * d_func() {                                                \
