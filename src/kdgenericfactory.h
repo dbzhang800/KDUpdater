@@ -33,7 +33,7 @@
 #ifndef DOXYGEN_RUN
 
 template< typename T_Identifier, template< typename U, typename V > class T_Map >
-class KDUPDATER_EXPORT KDGenericFactoryBase
+class KDGenericFactoryBase
 {
 protected:
     ~KDGenericFactoryBase() {}
@@ -73,7 +73,7 @@ private:
     T_Map< T_Identifier, FactoryFunction > map;
 };
 
-#ifdef KDAB_HAVE_CPP11_EXTERN_TEMPLATES
+#if defined (KDAB_HAVE_CPP11_EXTERN_TEMPLATES) && !defined(KDGENERICFACTORYBASE_INSTANTIATION)
 extern template class KDGenericFactoryBase<QString,QHash>;
 extern template class KDGenericFactoryBase<QString,QMap>;
 extern template class KDGenericFactoryBase<int,QHash>;

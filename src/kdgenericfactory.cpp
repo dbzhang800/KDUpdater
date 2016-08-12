@@ -20,6 +20,7 @@
 **
 **********************************************************************/
 
+#define KDGENERICFACTORYBASE_INSTANTIATION
 #include "kdgenericfactory.h"
 
 #include <QMap>
