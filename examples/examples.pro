@@ -3,7 +3,7 @@ TEMPLATE = subdirs
 CONFIG      += ordered
 
 SUBDIRS     += simpleexample kdupdaterdemo
-contains(QT_CONFIG,script) {
+qtHaveModule(script) {
         SUBDIRS += compatexample
         SUBDIRS += firmwaredemo
 }

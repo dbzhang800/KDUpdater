@@ -11,7 +11,7 @@ HEADERS += ../mainwindow.h \
 DEFINES += APP_VERSION="\\\"1.1\\\""
 RESOURCES += ../kdupdaterdemo.qrc
 
-SRCREPODIR = $$KDUPDATER_SOURCE_TREE/examples/data/kdupdaterdemo/repository
+SRCREPODIR = $$KDUPDATER_SOURCE_TREE/examples/kdupdaterdemo/repository
 DESTREPODIR = $$KDUPDATER_BUILD_TREE/examples/kdupdaterdemo/updateserver
 DEFINES += REPO_DIR="\\\"$$DESTREPODIRT\\\""
 
