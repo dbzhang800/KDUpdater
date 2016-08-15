@@ -190,7 +190,7 @@ bool UFUncompressor::uncompress()
             written += num;
         }
 
-        const QFile::Permissions perm = static_cast< QFile::Permissions >( ufEntry.permissions );
+        const QFile::Permissions perm = static_cast< QFile::Permissions >( static_cast< QFile::Permissions::Int > ( ufEntry.permissions ) );
         ufeFile.setPermissions( perm );
 
         ufeFile.commit( KDSaveFile::OverwriteExistingFile );        
